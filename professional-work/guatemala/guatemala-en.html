@@ -91,6 +91,40 @@
 .cookie-bar button { font-family:'Poppins',system-ui,sans-serif; font-size:11.5px; letter-spacing:0.04em; text-transform:uppercase; border-radius:100px; padding:9px 20px; cursor:pointer; border:none; }
 .cookie-bar .cb-accept { background:#B8823C; color:#1A1A1A; font-weight:500; }
 .cookie-bar .cb-decline { background:transparent; color:#FAFAF8; border:1px solid rgba(255,255,255,0.3); }
+
+/* MOBILE-FIX-CSS-MARKER */
+
+@media (max-width: 900px) {
+  .sec { flex-direction: column; gap: 16px; padding: 40px 24px 8px; }
+  .sec-label { width: auto; }
+  .sec-body { max-width: none; }
+
+  .grid3, .grid4, .icon-row, .wood-grid,
+  [style*="grid-template-columns:1fr 1fr 1fr"], [style*="grid-template-columns: 1fr 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"], [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:repeat(2,1fr)"], [style*="grid-template-columns: repeat(2, 1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"], [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"], [style*="grid-template-columns: repeat(4, 1fr)"],
+  [style*="grid-template-columns:repeat(6,1fr)"], [style*="grid-template-columns: repeat(6, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  .test-list, .factor-grid { grid-template-columns: 1fr !important; }
+
+  .coverflow, .carousel-cap, .grid3, .grid4, .film-row,
+  [style*="margin:8px 64px"], [style*="margin: 8px 64px"],
+  [style*="margin:16px 64px"], [style*="margin: 16px 64px"],
+  [style*="margin:24px 64px"], [style*="margin: 24px 64px"] {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+
+  .imgph.real { height: 62vw !important; width: 100% !important; }
+  .compare-photo { height: 62vw !important; width: 100% !important; }
+
+  .test-info-row { flex-direction: column; align-items: stretch; gap: 14px; }
+  .test-info-row .info-col { width: auto !important; }
+  .test-info-row .info-col.time, .test-info-row .info-col.dir { align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -473,5 +507,51 @@
   });
 })();
 </script>
+
+<!-- MOBILE-FIX-JS-MARKER -->
+<script>
+(function(){
+  if (window.innerWidth > 900) return;
+
+  // Neutralize ad-hoc inline widths/left-margins tuned for desktop layout,
+  // so rows that were manually sized/positioned for a wide screen don't
+  // overflow or sit off-screen on mobile. Only touches inline style
+  // attributes, never the stylesheet, and only runs under the 900px
+  // breakpoint already used across the site.
+  var nodes = document.querySelectorAll('[style]');
+  for (var i = 0; i < nodes.length; i++) {
+    var el = nodes[i];
+    var w = el.style.width;
+    if (w && /^\d+px$/.test(w) && parseInt(w, 10) > 340) { el.style.width = '100%'; }
+    var ml = el.style.marginLeft;
+    if (ml && /^\d+px$/.test(ml) && parseInt(ml, 10) > 100) { el.style.marginLeft = '0px'; }
+  }
+
+  function initSwipe(el){
+    var startX = 0, startY = 0, active = false;
+    el.addEventListener('touchstart', function(e){
+      if (e.touches.length !== 1) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      active = true;
+    }, {passive:true});
+    el.addEventListener('touchend', function(e){
+      if (!active) return;
+      active = false;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - startX;
+      var dy = t.clientY - startY;
+      if (Math.abs(dx) < 36 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+      var next = el.querySelector('.carousel-arrow.next');
+      var prev = el.querySelector('.carousel-arrow.prev');
+      if (dx < 0 && next) next.click();
+      else if (dx > 0 && prev) prev.click();
+    }, {passive:true});
+  }
+  var els = document.querySelectorAll('.coverflow');
+  for (var j=0;j<els.length;j++){ initSwipe(els[j]); }
+})();
+</script>
+
 </body>
 </html>
