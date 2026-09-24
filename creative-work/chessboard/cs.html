@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Chessboard — Francisco Cruz</title>
+<meta name="description" content="Dřevěná šachovnice s geometrickými figurkami a vlastním úložným prostorem, vyrobená z conacaste a palo blanco.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="alternate" hreflang="es" href="es.html">
+<link rel="alternate" hreflang="cs" href="cs.html">
+<link rel="alternate" hreflang="x-default" href="en.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+a { color:#B8823C; text-decoration:none; }
+img { max-width:100%; }
+.eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+.navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+.navlabel a { color:#6B6B66; }
+.navlabel a:hover { color:#1A1A1A; }
+.label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+.tag { display:inline-flex; align-items:center; padding:5px 12px; border-radius:100px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; background:#E8ECE7; color:#4F6355; }
+.real-img { width:100%; height:auto; display:block; border-radius:3px; box-shadow:0 12px 30px rgba(26,26,26,0.10); }
+.photo-cap { font-size:12px; color:#8b857a; font-weight:400; letter-spacing:0.01em; margin-top:10px; line-height:1.5; }
+.sec-label { font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#B8823C; font-weight:500; margin-bottom:10px; }
+.sec-body { font-size:15px; font-weight:300; color:#3a3a37; line-height:1.75; }
+.pair-row { display:flex; gap:24px; }
+.pair-row > div { flex:1; }
+.quad-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.langsw { display:flex; gap:8px; align-items:center; padding-left:24px; border-left:1px solid #E5E2DA; }
+.langsw .cur { color:#1A1A1A; font-weight:600; }
+.langsw .sep { color:#D8D3C6; }
+.page { max-width:900px; margin:0 auto; }
+.wrap { display:flex; flex-direction:column; }
+
+@media (max-width: 780px) {
+  header.hd, .wrap { padding-left:20px !important; padding-right:20px !important; }
+  .pair-row, .quad-grid { flex-direction:column; grid-template-columns:1fr; }
+}
+.cs-disclaimer { max-width:680px; padding:18px 22px; background:#F5F2EA; border:1px solid #E5E2DA; border-radius:4px; font-size:12.5px; color:#6B6B66; font-weight:300; line-height:1.6; font-style:italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hd" style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../../index-cs.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <a href="../../professional-work/cs.html">Profesionální práce</a>
+      <span style="color:#1A1A1A;">Kreativní projekty</span>
+      <a href="../../about-me/about-cs.html">O mně</a>
+      <a href="../../contact-cs.html">Kontakt</a>
+      <div class="langsw">
+        <a href="en.html">EN</a><span class="sep">/</span><a href="es.html">ES</a><span class="sep">/</span><a class="cur" href="cs.html">CS</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page" style="padding:0 64px;">
+    <div style="display:flex;justify-content:space-between;padding:18px 0 0;">
+      <a class="eyebrow" href="../en.html">← Zpět na Kreativní projekty</a><span class="eyebrow" style="color:#9C9890;">Projekt 3 ze 4</span>
+    </div>
+
+    <div style="padding:52px 0 32px;max-width:760px;">
+      <span class="tag">Truhlářství, 2018</span>
+      <h1 style="font-weight:300;font-size:44px;line-height:1.15;margin:16px 0 14px;">Chessboard</h1>
+      <p style="font-size:15.5px;font-weight:300;color:#2c2c29;line-height:1.75;margin:0;">Konferenční stolek, který je stejně tak nábytkem jako šachovnicí. Chtěl jsem desku s výrazným geometrickým charakterem, proto má každá figurka svůj vlastní řez, dost odlišný na to, aby šly obě strany na první pohled rozeznat, a tvar, díky kterému se celá sada po hře složí do vlastních úložných přihrádek.</p>
+    </div>
+
+    <div style="padding:8px 0 0;">
+      <img class="real-img" src="chessboard-hero.jpg" alt="A hand moving a chess piece across the finished board mid-game">
+      <div class="photo-cap">Figurka určená stejně tak ke hře jako k obdivování.</div>
+    </div>
+
+    <div style="padding:56px 0 0;">
+      <div class="sec-label">01 — Proces</div>
+      <p class="sec-body">Deska začala jako surové dřevo, nařezané na jednotlivé čtverce na okružní pile a poté slepené čtverec po čtverci do samotné hrací plochy. Následovaly figurky, každá tvarovaná a řezaná ručně, dokud neměla vlastní siluetu, kterou lze rozeznat hmatem stejně dobře jako pohledem.</p>
+    </div>
+    <div style="padding:24px 0 0;">
+      <div class="quad-grid">
+        <div>
+          <img class="real-img" src="chessboard-process-4.jpg" alt="Squares cut from Conacaste and Palo Blanco laid out on the workbench with clamps and tools, checker pattern forming">
+          <div class="photo-cap">Čtverce nařezané a rozložené na pracovním stole před slepením.</div>
+        </div>
+        <div>
+          <img class="real-img" src="chessboard-process-5.jpg" alt="A small section of the checker pattern clamped while the glue sets">
+          <div class="photo-cap">Část desky sevřená ve svěrce, zatímco schne lepidlo.</div>
+        </div>
+        <div>
+          <img class="real-img" src="chessboard-process-6.jpg" alt="The glued-up board on the workshop floor with pieces sorted in a line from dark to light">
+          <div class="photo-cap">Třídění figurek podle odstínu, než se rozhodne, kam která patří.</div>
+        </div>
+        <div>
+          <img class="real-img" src="chessboard-process-1.jpg" alt="Rough-cut chess pieces arranged on the unfinished checker board, before final shaping">
+          <div class="photo-cap">První figurky rozložené na desce, ještě před finálním tvarováním.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:56px 0 0;">
+      <div class="sec-label">02 — Materiál</div>
+      <p class="sec-body">Deska je postavená ze dvou dřevin: conacaste a palo blanco. Conacaste je měkké, s výraznou kresbou a sytým tmavým odstínem, palo blanco je tvrdší, světlejší, s jemnější kresbou. Vedle sebe dávají desce i figurkám přirozený kontrast mezi oběma stranami, bez potřeby moření nebo barvení.</p>
+    </div>
+    <div style="padding:24px 0 0;">
+      <div class="pair-row">
+        <div>
+          <img class="real-img" src="chessboard-material-1.jpg" alt="Eye-level view down the length of the board with pieces set up on both sides, showing the wood contrast">
+          <div class="photo-cap">Figurky z conacaste a palo blanco, rozestavěné na desce.</div>
+        </div>
+        <div>
+          <img class="real-img" src="chessboard-material-2.jpg" alt="Close-up of the geometric chess pieces showing the grain and cut of each wood">
+          <div class="photo-cap">Geometrický řez jednotlivých figurek, zblízka.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:56px 0 0;">
+      <div class="sec-label">03 — Úložný prostor a povrchová úprava</div>
+      <p class="sec-body">Deska zároveň slouží jako vlastní pouzdro. Pod hrací plochou je zásuvka vyložená látkou, kde má každá figurka své místo, takže sada, která před chvílí ležela na stole, se sbalí do něčeho, co vypadá stejně dobře i zavřené. Povrchová úprava je několik kol jemného broušení a tenká vrstva čirého matného laku, dost na to, aby dřevo chránila před prachem a vodou, aniž by zakryla kresbu.</p>
+    </div>
+    <div style="padding:24px 0 0;max-width:520px;">
+      <img class="real-img" src="chessboard-storage-1.jpg" alt="The chessboard's drawer pulled open, showing all the pieces stored in their own compartments">
+      <div class="photo-cap">Zásuvka pod deskou, každá figurka na svém místě.</div>
+    </div>
+    <div style="padding:28px 0 0;">
+      <img class="real-img" src="chessboard-storage-2.jpg" alt="The chessboard closed, sitting as a box on a dining table between chairs">
+      <div class="photo-cap">Zavřená stojí sama o sobě jako krabice.</div>
+    </div>
+
+    <div style="padding:56px 0 0;">
+      <img class="real-img" src="chessboard-closing.jpg" alt="Overhead shot of the finished wooden chessboard on a coffee table, warm ambient light">
+      <div class="photo-cap">Hotová deska, nastylovaná na konferenčním stolku, pro který vznikla.</div>
+    </div>
+
+  </div>
+
+    <!-- ============ NEXT PROJECT ============ -->
+  <a href="../artistic-drawings/cs.html" style="display:flex;justify-content:space-between;align-items:center;padding:56px 64px 40px;border-top:1px solid #E5E2DA;margin-top:56px;text-decoration:none;">
+    <span class="navlabel">Další projekt</span>
+    <span style="font-size:18px;font-weight:400;color:#1A1A1A;">Umělecké kresby →</span>
+  </a>
+
+  <div style="padding:32px 64px 0;">
+    <div class="cs-disclaimer">Rád bych s vámi komunikoval česky. Češtinu se zatím učím, a proto jsem při přípravě tohoto dokumentu využil online překladač. Předem se omlouvám za případné jazykové nepřesnosti a děkuji za pochopení.</div>
+  </div>
+
+<footer style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;margin-top:56px;flex-wrap:wrap;gap:8px;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · linkedin.com/in/franciscocruz90 · Praha, Česko</span>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Búho GT — Portfolio: Francisco Cruz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+    a { color:#B8823C; text-decoration:none; }
+    .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+    .navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+    .label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+    .tag { display:inline-flex; align-items:center; padding:5px 12px; border-radius:100px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; background:#E8ECE7; color:#4F6355; }
+    .stat { display:flex; flex-direction:column; gap:4px; }
+    .stat b { font-size:19px; font-weight:500; }
+    .stat span { font-size:11.5px; color:#6B6B66; font-weight:300; }
+
+    .imgph { background:#EFE9DD; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; border-radius:2px; text-align:center; padding:16px; }
+    .imgph-cap { font-size:12px; color:#8b857a; font-weight:400; letter-spacing:0.01em; max-width:340px; line-height:1.5; }
+    .imgph.brand { background:#F2ECE1; }
+    .imgph.brand .imgph-cap { color:#9c8a6a; }
+    .imgph.real { padding:0; overflow:hidden; position:relative; background:#1A1A1A; }
+    .imgph.real img { width:100%; height:100%; object-fit:cover; display:block; }
+    .photo-cap { font-size:11.5px; color:#8b857a; font-weight:300; line-height:1.5; margin-top:8px; }
+
+    .sec { display:flex; gap:64px; padding:56px 64px 8px; }
+    .sec-label { width:220px; flex-shrink:0; }
+    .sec-body { max-width:680px; }
+    .sec-body p { font-size:15.5px; font-weight:300; line-height:1.75; margin:0 0 18px; color:#2c2c29; }
+    .sec-body p:last-child { margin-bottom:0; }
+    .flag { font-size:13px; font-weight:400; color:#9c7a3c; background:#F5EDDC; border-radius:2px; padding:10px 14px; margin:0 0 18px; line-height:1.6; }
+
+    .film-row { display:flex; gap:18px; overflow-x:auto; padding-bottom:4px; }
+    .film-item { flex:none; width:200px; display:flex; flex-direction:column; gap:8px; }
+    .film-item .imgph { height:150px; padding:10px; }
+    .film-item .imgph-cap { font-size:10.5px; max-width:170px; }
+    .film-num { font-family:'Poppins',sans-serif; font-size:10px; color:#B8823C; font-weight:600; letter-spacing:0.05em; }
+
+    .film-item.wide { width:420px; }
+    .film-item.wide .imgph { height:315px; }
+
+    .wood-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:8px auto 0; max-width:600px; }
+    .wood-card { display:flex; flex-direction:column; gap:9px; cursor:pointer; user-select:none; perspective:1200px; }
+    .wood-card-inner { position:relative; width:100%; aspect-ratio:2/3; transition:transform .6s ease; transform-style:preserve-3d; border-radius:3px; }
+    .wood-card.flipped .wood-card-inner { transform:rotateY(180deg); }
+    .wood-card-face { position:absolute; inset:0; backface-visibility:hidden; border-radius:3px; overflow:hidden; background:#EFE9DD; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+    .wood-card-face img { width:100%; height:100%; object-fit:contain; display:block; }
+    .wood-card-back { transform:rotateY(180deg); }
+    .wood-name { display:flex; justify-content:space-between; align-items:baseline; padding:0 2px; }
+    .wood-name b { font-size:12.5px; font-weight:500; color:#3a3a35; }
+    .wood-name span { font-size:10px; font-style:italic; color:#9C9890; font-weight:300; }
+
+    .coverflow { position:relative; margin:8px 64px 0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .coverflow-stage { position:relative; width:100%; height:100%; }
+    .cover-item { position:absolute; top:50%; left:50%; border-radius:3px; overflow:hidden; background:#1A1A1A; box-shadow:0 18px 40px rgba(0,0,0,0.28); transition:transform .35s ease, opacity .35s ease; cursor:pointer; }
+    .cover-item img { width:100%; height:100%; object-fit:cover; display:block; }
+    .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; background:#FAFAF8; border:1px solid #E0DACB; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:5; }
+    .carousel-arrow.prev { left:14px; }
+    .carousel-arrow.next { right:14px; }
+    .carousel-dots { display:flex; gap:6px; justify-content:center; margin-top:14px; }
+    .carousel-dot { width:6px; height:6px; border-radius:50%; background:#D8D2C4; cursor:pointer; }
+    .carousel-dot.active { background:#4F6355; }
+  .page { max-width:1440px; margin:0 auto; display:flex; flex-direction:column; zoom:0.75; }
+.cs-disclaimer { max-width:680px; padding:18px 22px; background:#F5F2EA; border:1px solid #E5E2DA; border-radius:4px; font-size:12.5px; color:#6B6B66; font-weight:300; line-height:1.6; font-style:italic; }
+</style>
+
+</head>
+<body>
+
+<div class="page">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../../index-cs.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <span style="color:#1A1A1A;">Profesionální práce</span>
+      <a href="../../creative-work/cs.html">Kreativní projekty</a>
+      <a href="../../about-me/about-cs.html">O mně</a>
+      <a href="../../contact-cs.html">Kontakt</a>
+      <div class="langsw">
+        <a href="en.html">EN</a><span class="sep">/</span><a href="es.html">ES</a><span class="sep">/</span><a class="cur" href="cs.html">CS</a>
+      </div>
+    </div>
+  </div><div style="display:flex;justify-content:space-between;padding:18px 64px 0;">
+    <a class="eyebrow" href="../cs.html">← Zpět na Profesionální práci</a><span class="eyebrow" style="color:#9C9890;">Projekt 6 ze 6</span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="padding:52px 64px 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
+    <div style="max-width:760px;">
+      <span class="tag">Vlastní projekt</span>
+      <h1 style="font-weight:300;font-size:46px;line-height:1.15;margin:16px 0 14px;">Búho GT</h1>
+      <p style="font-size:16px;font-weight:300;color:#6B6B66;line-height:1.6;margin:0;">Malý byznys s dřevěnými řeznickými špalky z tvrdého dřeva, které jsem navrhl, vyrobil a prodával přímo sám, od jednorázového osobního projektu až po skutečnou výrobu.</p>
+    </div>
+    <div style="display:flex;gap:36px;padding-bottom:6px;">
+      <div class="stat"><b>Zakladatel</b><span>Role</span></div>
+      <div class="stat"><b>Srp 2016 – Bře 2019</b><span>Období projektu</span></div>
+      <div class="stat"><b>~90 kusů</b><span>Dvě produktové řady, téměř vše prodáno</span></div>
+    </div>
+  </div>
+
+  <div class="imgph real" style="margin:8px 64px 0;height:560px;">
+    <img src="bh-hero.jpg" alt="Hromada hotových řeznických špalků Búho GT z čelního dřeva na dřevěném stole">
+  </div>
+
+  <!-- ============ 01 HOW IT STARTED ============ -->
+  <div class="sec" style="padding-top:76px;">
+    <div class="sec-label"><div class="label">01 &nbsp; Jak to začalo</div></div>
+    <div class="sec-body">
+      <p>Búho GT začal jako věc, kterou jsem si udělal sám pro sebe, řeznický špalek nařezaný a dokončený v univerzitní dílně, bez jakéhokoli podnikatelského plánu. Lidé, kteří ho viděli, se začali ptát, jestli bych jim taky nemohl jeden udělat, a jakmile se mě zeptalo dost lidí, začal jsem je prodávat.</p>
+    </div>
+  </div>
+
+  <!-- ============ 02 TURNING IT INTO A BUSINESS ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">02 &nbsp; Jak se z toho stal byznys</div></div>
+    <div class="sec-body">
+      <p>Většina se to rozšířilo od úst k ústům. Vystavovali jsme na několika místních trzích, kde spousta lidí viděla špalky poprvé naživo, a vedli jsme to zároveň s profilem na Instagramu a Facebooku. Pár místních obchodů mělo pár kusů v komisním prodeji a taky nějaké přes ně prodalo.</p>
+    </div>
+  </div>
+
+  <!-- ============ 03 THE CRAFT ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">03 &nbsp; Řemeslo</div></div>
+    <div class="sec-body">
+      <p>Než jsem se rozhodl pro konkrétní design, zkoumal jsem různé způsoby skládání dřeva a nakonec jsem zvolil čelní dřevo, stejnou konstrukci, jakou používají skutečné řeznické špalky: vlákna směřují nahoru místo podél povrchu, takže nůž řeže mezi nimi místo napříč, což je šetrnější k čepeli i k desce. Čelní dřevo navíc lépe vynikne samo o sobě, kresba a barva každého druhu dřeva jsou zřetelnější než na ploše s podélnými vlákny, což bylo důležité, protože součástí záměru bylo ukázat guatemalská tvrdá dřeva.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0 348px;display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:620px;">
+    <div>
+      <div class="imgph real" style="height:331px;background:#FAFAF8;"><img src="bh-endgrain.jpg" alt="Diagram porovnávající čelní dřevo s bočním a plošným vláknem" style="object-fit:contain;"></div>
+      <div class="photo-cap">Čelní dřevo vs. boční a plošné vlákno: proč záleží na směru vláken</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:331px;background:#FAFAF8;"><img src="bh-knife.jpg" alt="Diagram ukazující, jak čepel nože vstupuje do čelního dřeva mezi vlákny" style="object-fit:contain;"></div>
+      <div class="photo-cap">Jak se čepel setkává s čelním dřevem: mezi vlákny, ne napříč nimi, díky čemuž se deska nepoškrábe a nůž se netupí</div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:36px;">
+    <div class="sec-label"></div>
+    <div class="sec-body">
+      <p>Původním produktem byl opravdový řeznický špalek z tvrdého dřeva, postavený a dokončený s velkou pozorností ke kresbě dřeva. Později jsem přidal jednodušší druhý produkt, základní prkénko na sýr, které přeskočilo náročnější skládání kresby dřeva a bylo uděláno hlavně tak, aby dobře vypadalo, za nižší cenu. Dvě úrovně znamenaly, že si lidé mohli koupit podle toho, kolik chtěli utratit.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:457px;">
+      <div class="imgph real" style="height:304px;width:457px;"><img src="bh-sketches.jpg" alt="Hotová šachovnicová deska z čelního dřeva vedle svých původních návrhových skic" style="width:457px;height:304px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Hotová deska vedle skic, ze kterých vznikla</div>
+    </div>
+    <div style="width:199px;">
+      <div class="imgph real" style="height:304px;width:199px;"><img src="bh-packaging-sketches.jpg" alt="Ručně kreslené koncepční skici obalu s popiskem Empaque" style="width:199px;height:304px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">První koncepty obalu, nakreslené ručně</div>
+    </div>
+  </div>
+
+  <div style="margin:40px 64px 0;">
+    <div class="label" style="margin-bottom:10px;">Prkénka na sýr</div>
+    <div class="coverflow" style="height:340px;">
+      <button class="carousel-arrow prev" onclick="bhCheeseMove(-1)" aria-label="Previous cheese board photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"></path></svg>
+      </button>
+      <div class="coverflow-stage" id="bhCheeseStage"></div>
+      <button class="carousel-arrow next" onclick="bhCheeseMove(1)" aria-label="Next cheese board photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"></path></svg>
+      </button>
+    </div>
+    <div style="text-align:center;margin:14px 0 0;">
+      <span class="label" id="bhCheeseCap" style="color:#6B6B66;">Prkénko na sýr, pohled 1 z 7</span>
+    </div>
+    <div class="carousel-dots" id="bhCheeseDots"></div>
+  </div>
+
+  <div style="margin:40px 64px 0;">
+    <div class="label" style="margin-bottom:10px;">Řeznické špalky</div>
+    <div class="coverflow" style="height:340px;">
+      <button class="carousel-arrow prev" onclick="bhBlockMove(-1)" aria-label="Previous butcher block photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"></path></svg>
+      </button>
+      <div class="coverflow-stage" id="bhBlockStage"></div>
+      <button class="carousel-arrow next" onclick="bhBlockMove(1)" aria-label="Next butcher block photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"></path></svg>
+      </button>
+    </div>
+    <div style="text-align:center;margin:14px 0 0;">
+      <span class="label" id="bhBlockCap" style="color:#6B6B66;">Špalek, pohled 1 z 18</span>
+    </div>
+    <div class="carousel-dots" id="bhBlockDots"></div>
+  </div>
+
+  <!-- ============ 04 THE WOOD ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">04 &nbsp; Dřevo</div></div>
+    <div class="sec-body">
+      <p>Každá deska používá skutečná guatemalská tvrdá dřeva a druhy jsem prozkoumal natolik důkladně, že jsem pro ně navrhl sadu pohlednic, jednu pro každý druh: na přední straně botanická ilustrace ve vědeckém stylu, na zadní straně hotové, opracované dřevo. Kliknutím na kartu ji otočíš.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 0 14px;text-align:center;font-size:11.5px;letter-spacing:0.04em;color:#B8823C;font-weight:400;display:flex;align-items:center;justify-content:center;gap:6px;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2"><path d="M9 15l3 3 3-3M9 9l3-3 3 3"></path><path d="M12 3v18"></path></svg>
+    Klikni na kartu a otoč ji
+  </div>
+
+  <div class="wood-grid">
+    <div class="wood-card" data-key="w1">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-01-front.jpg" alt="Cedro, Cedrela odorata, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-01-back.jpg" alt="Hotové opracované dřevo: Cedro"></div>
+      </div>
+      <div class="wood-name"><b>Cedro</b><span>Cedrela odorata</span></div>
+    </div>
+    <div class="wood-card" data-key="w2">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-02-front.jpg" alt="Nogal, Juglans olanchana, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-02-back.jpg" alt="Hotové opracované dřevo: Nogal"></div>
+      </div>
+      <div class="wood-name"><b>Nogal</b><span>Juglans olanchana</span></div>
+    </div>
+    <div class="wood-card" data-key="w3">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-03-front.jpg" alt="Palo Blanco, Roseodendron donnell-smithii, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-03-back.jpg" alt="Hotové opracované dřevo: Palo Blanco"></div>
+      </div>
+      <div class="wood-name"><b>Palo Blanco</b><span>Roseodendron donnell-smithii</span></div>
+    </div>
+    <div class="wood-card" data-key="w4">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-04-front.jpg" alt="Bálsamo, Myroxylon balsamum, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-04-back.jpg" alt="Hotové opracované dřevo: Bálsamo"></div>
+      </div>
+      <div class="wood-name"><b>Bálsamo</b><span>Myroxylon balsamum</span></div>
+    </div>
+    <div class="wood-card" data-key="w5">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-05-front.jpg" alt="Santa María, Calophyllum brasiliense, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-05-back.jpg" alt="Hotové opracované dřevo: Santa María"></div>
+      </div>
+      <div class="wood-name"><b>Santa María</b><span>Calophyllum brasiliense</span></div>
+    </div>
+    <div class="wood-card" data-key="w6">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-06-front.jpg" alt="Caoba, Swietenia macrophylla, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-06-back.jpg" alt="Hotové opracované dřevo: Caoba"></div>
+      </div>
+      <div class="wood-name"><b>Caoba</b><span>Swietenia macrophylla</span></div>
+    </div>
+    <div class="wood-card" data-key="w7">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-07-front.jpg" alt="Matilisguate, Tabebuia rosea, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-07-back.jpg" alt="Hotové opracované dřevo: Matilisguate"></div>
+      </div>
+      <div class="wood-name"><b>Matilisguate</b><span>Tabebuia rosea</span></div>
+    </div>
+    <div class="wood-card" data-key="w8">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-08-front.jpg" alt="Rosul, Dalbergia stevensonii, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-08-back.jpg" alt="Hotové opracované dřevo: Rosul"></div>
+      </div>
+      <div class="wood-name"><b>Rosul</b><span>Dalbergia stevensonii</span></div>
+    </div>
+    <div class="wood-card" data-key="w9">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-09-front.jpg" alt="Conacaste, Enterolobium cyclocarpum, botanická ilustrace"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-09-back.jpg" alt="Hotové opracované dřevo: Conacaste"></div>
+      </div>
+      <div class="wood-name"><b>Conacaste</b><span>Enterolobium cyclocarpum</span></div>
+    </div>
+  </div>
+
+  <!-- ============ 05 GROWING IT ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">05 &nbsp; Jak to rostlo</div></div>
+    <div class="sec-body">
+      <p>Poptávka dosáhla bodu, kdy jsem musel přestat vyrábět každý kus sám a přestat se spoléhat na univerzitní dílnu. Najal jsem truhláře, někoho, kdo vyráběl nábytek, ale nikdy předtím neudělal řeznický špalek, sám jsem koupil tvrdé dřevo, přivezl mu ho a provedl ho tím, jak je vyrábět. Vyšlo to dobře, rychle se to naučil a dál je s námi vyráběl. Špalky nebyly levné: množství dřeva a práce v každém z nich znamenaly reálnou cenu, a lidé ji platili.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:236px;">
+      <div class="imgph real" style="height:236px;width:236px;"><img src="bh-carpenter-you.jpg" alt="Francisco kreslí návrh v dílně" style="width:236px;height:236px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Vymýšlení návrhu v dílně</div>
+    </div>
+    <div style="width:420px;">
+      <div class="imgph real" style="height:236px;width:420px;"><img src="bh-carpenter-him.jpg" alt="Truhlář kontroluje rozpracovaný kus" style="width:420px;height:236px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Truhlář, kterého jsem zaškolil a se kterým jsem spolupracoval</div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:453px;">
+      <div class="imgph real" style="height:339px;width:453px;"><img src="bh-stock-blocks.jpg" alt="Surové tvrdé dřevo naskládané před nařezáním na řeznické špalky" style="width:453px;height:339px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Surové dřevo, než se z něj stane špalek</div>
+    </div>
+    <div style="width:203px;">
+      <div class="imgph real" style="height:339px;width:203px;"><img src="bh-stock-cheeseboard.jpg" alt="Surové tvrdé dřevo pro prkénka na sýr" style="width:203px;height:339px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Dřevo odložené pro prkénka na sýr</div>
+    </div>
+  </div>
+
+  <!-- ============ 06 WHERE IT IS NOW ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">06 &nbsp; Kde to je teď</div></div>
+    <div class="sec-body">
+      <p>Ve dvou dávkách jsme vyrobili zhruba 40 řeznických špalků a asi 50 jednodušších prkének na sýr a prodali jsme skoro všechno. Búho dnes už nefunguje, ale bylo to místo, kde jsem se poprvé naučil, co skutečně obnáší něco navrhnout, nechat to vyrobit ve skutečné kvalitě a prodat to přímo lidem, kteří to chtěli.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div>
+      <div class="imgph real" style="height:360px;"><img src="bh-batch-1.jpg" alt="Hotová dávka řeznických špalků naskládaných a připravených"></div>
+      <div class="photo-cap">Hotová dávka, naskládaná a připravená</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:360px;"><img src="bh-batch-2.jpg" alt="Hotová dávka řeznických špalků naskládaných a připravených"></div>
+      <div class="photo-cap">Dvě dávky, celkem zhruba 90 kusů</div>
+    </div>
+  </div>
+
+  <!-- ============ 07 BRAND & IDENTITY (CLOSING) ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">07 &nbsp; Značka a identita</div></div>
+    <div class="sec-body">
+      <p>Produkt měl svou vlastní identitu: slovní značku a znak sovy, které jsem navrhl dohromady jako kombinované logo, logo laserem vypálené přímo do každé desky, gumové razítko používané na sáčcích a obalech, krátký návod, jak o desku pečovat, a k tomu přítomnost na Instagramu a Facebooku, která nesla většinu šíření od úst k ústům.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 64px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+    <div>
+      <div class="imgph real" style="height:260px;"><img src="bh-logo-iso.jpg" alt="Kombinované logo Búho, slovní značka a ikona sovy dohromady"></div>
+      <div class="photo-cap">Kombinované logo</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:260px;"><img src="bh-logo-type.jpg" alt="Samotná slovní značka Búho"></div>
+      <div class="photo-cap">Slovní značka</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:260px;"><img src="bh-logo-mark.jpg" alt="Samotná ikona sovy"></div>
+      <div class="photo-cap">Ikona</div>
+    </div>
+  </div>
+
+  <div style="margin:24px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:328px;">
+      <div class="imgph real" style="height:246px;width:328px;"><img src="bh-stamp-design.jpg" alt="Laserem vyřezaná razící matrice použitá pro razítko s logem" style="width:328px;height:246px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Razící matrice, vyřezaná laserem pro razítko</div>
+    </div>
+    <div style="width:328px;">
+      <div class="imgph real" style="height:246px;width:328px;"><img src="bh-packaging.jpg" alt="Deska s otiskem razítka na balení, připravená k odeslání" style="width:328px;height:246px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Značka, orazítkovaná a zabalená na hotové desce</div>
+    </div>
+  </div>
+
+  <div style="margin:24px 0 0 348px;max-width:680px;">
+    <div class="imgph real" style="height:auto;"><img src="bh-fullset.jpg" alt="Kompletní systém Búho GT: zabalená deska, olej na péči, návod a vizitka stylizované dohromady" style="width:100%;height:auto;display:block;object-fit:contain;"></div>
+    <div class="photo-cap">Hotový systém: deska, olej na péči, návod a obal dohromady</div>
+  </div>
+
+  <div style="margin:24px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:237px;">
+      <div class="imgph real" style="height:296px;width:237px;"><img src="bh-social.jpg" alt="Mřížka příspěvků z Instagramu účtu Búho GT" style="width:237px;height:296px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Instagramová mřížka, která nesla většinu šíření od úst k ústům</div>
+    </div>
+    <div style="width:419px;">
+      <div class="imgph real" style="height:296px;width:419px;"><img src="bh-onshop.jpg" alt="Desky Búho GT vystavené k prodeji na polici v The Kitchen" style="width:419px;height:296px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Na polici jednoho z obchodů, které je prodávaly</div>
+    </div>
+  </div>
+
+  <!-- ============ CLOSING CAROUSEL ============ -->
+  <div class="sec" style="padding-top:56px;">
+    <div class="sec-label"><div class="label">V používání</div></div>
+    <div class="sec-body">
+      <p>Několik desek skutečně v provozu: krájení, servírování, odolávání každodenní práci v kuchyni, místo aby jen ležely jako předměty.</p>
+    </div>
+  </div>
+
+  <div class="coverflow" style="height:400px;">
+    <button class="carousel-arrow prev" onclick="bhCarouselMove(-1)" aria-label="Previous photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"></path></svg>
+    </button>
+    <div class="coverflow-stage" id="bhCoverStage"></div>
+    <button class="carousel-arrow next" onclick="bhCarouselMove(1)" aria-label="Next photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"></path></svg>
+    </button>
+  </div>
+  <div style="text-align:center;margin:16px 64px 0;">
+    <span class="label" id="bhCarouselCap" style="color:#6B6B66;">Deska v provozu, pohled 1 z 6</span>
+  </div>
+  <div class="carousel-dots" id="bhCarouselDots"></div>
+
+  <script>
+  (function(){
+    function initCoverflow(cfg){
+      var total = cfg.images.length, idx = 0;
+      var stage = document.getElementById(cfg.stageId);
+      var cap = document.getElementById(cfg.capId);
+      var dotsEl = document.getElementById(cfg.dotsId);
+      var items = [];
+      for (var i=0;i<total;i++){
+        var el = document.createElement('div');
+        el.className = 'cover-item';
+        el.style.width = cfg.w + 'px';
+        el.style.height = cfg.h + 'px';
+        var img = document.createElement('img');
+        img.src = cfg.images[i];
+        img.alt = cfg.label + ', ' + (i+1) + ' z ' + total;
+        el.appendChild(img);
+        el.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        stage.appendChild(el);
+        items.push(el);
+      }
+      for (var i=0;i<total;i++){
+        var d = document.createElement('div');
+        d.className = 'carousel-dot' + (i===0?' active':'');
+        d.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        dotsEl.appendChild(d);
+      }
+      function setIdx(n){
+        idx = (n+total)%total;
+        for (var j=0;j<total;j++){
+          var diff = j - idx;
+          if (diff > total/2) diff -= total;
+          if (diff < -total/2) diff += total;
+          var ad = Math.abs(diff);
+          var el = items[j];
+          if (ad > 3){ el.style.opacity = '0'; el.style.pointerEvents = 'none'; el.style.zIndex = '0'; continue; }
+          var scale = ad===0 ? 1 : (ad===1 ? 0.74 : (ad===2 ? 0.56 : 0.42));
+          var op = ad===0 ? 1 : (ad===1 ? 0.55 : (ad===2 ? 0.24 : 0.1));
+          var x = diff * cfg.spacing;
+          el.style.transform = 'translate(-50%,-50%) translateX(' + x + 'px) scale(' + scale + ')';
+          el.style.opacity = String(op);
+          el.style.pointerEvents = 'auto';
+          el.style.zIndex = String(100 - ad);
+        }
+        cap.textContent = cfg.label + ', ' + (idx+1) + ' z ' + total;
+        var dots = dotsEl.children;
+        for (var k=0;k<dots.length;k++){ dots[k].className = 'carousel-dot' + (k===idx?' active':''); }
+      }
+      setIdx(0);
+      return function(delta){ setIdx(idx+delta); };
+    }
+
+    window.bhCarouselMove = initCoverflow({
+      stageId:'bhCoverStage', capId:'bhCarouselCap', dotsId:'bhCarouselDots',
+      images:['bh-final-1.jpg','bh-final-2.jpg','bh-final-3.jpg','bh-final-4.jpg','bh-final-5.jpg','bh-final-6.jpg'],
+      label:'Deska v provozu, pohled', w:480, h:320, spacing:300
+    });
+
+    window.bhCheeseMove = initCoverflow({
+      stageId:'bhCheeseStage', capId:'bhCheeseCap', dotsId:'bhCheeseDots',
+      images:['bh-cheeseboard-1.jpg','bh-cheeseboard-2.jpg','bh-cheeseboard-3.jpg','bh-cheeseboard-4.jpg','bh-cheeseboard-5.jpg','bh-cheeseboard-6.jpg','bh-cheeseboard-7.jpg'],
+      label:'Prkénko na sýr, pohled', w:420, h:280, spacing:260
+    });
+
+    window.bhBlockMove = initCoverflow({
+      stageId:'bhBlockStage', capId:'bhBlockCap', dotsId:'bhBlockDots',
+      images:['bh-block-1.jpg','bh-block-1-detail.jpg','bh-block-3.jpg','bh-block-3-detail.jpg','bh-block-4.jpg','bh-block-4-detail.jpg','bh-block-7.jpg','bh-block-7-detail.jpg','bh-block-8.jpg','bh-block-8-detail.jpg','bh-block-9.jpg','bh-block-9-detail.jpg','bh-block-10.jpg','bh-block-10-detail.jpg','bh-block-11.jpg','bh-block-11-detail.jpg','bh-block-12.jpg','bh-block-12-detail.jpg'],
+      label:'Špalek, pohled', w:420, h:280, spacing:260
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var grid = document.querySelector('.wood-grid');
+    if (!grid || typeof IntersectionObserver === 'undefined') return;
+    var hinted = false;
+    var HINT_INDEXES = [0, 4, 8]; // spread across the 3x3 grid: top-left, center, bottom-right
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && !hinted) {
+          hinted = true;
+          var cards = grid.querySelectorAll('.wood-card');
+          HINT_INDEXES.forEach(function(i){
+            var card = cards[i];
+            if (!card) return;
+            setTimeout(function(){ card.classList.add('flipped'); }, 550);
+            setTimeout(function(){ card.classList.remove('flipped'); }, 1600);
+          });
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    io.observe(grid);
+  })();
+  </script>
+
+    <!-- ============ NEXT PROJECT ============ -->
+  <a href="../miners/cs.html" style="display:flex;justify-content:space-between;align-items:center;padding:72px 64px 40px;border-top:1px solid #E5E2DA;margin-top:56px;text-decoration:none;">
+    <span class="navlabel">Další projekt</span>
+    <span style="font-size:18px;font-weight:400;color:#1A1A1A;">The Miners →</span>
+  </a>
+
+  <div style="padding:32px 64px 0;">
+    <div class="cs-disclaimer">Rád bych s vámi komunikoval česky. Češtinu se zatím učím, a proto jsem při přípravě tohoto dokumentu využil online překladač. Předem se omlouvám za případné jazykové nepřesnosti a děkuji za pochopení.</div>
+  </div>
+
+  <div style="flex:1;"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · linkedin.com/in/franciscocruz90 · Praha, Česko</span>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var cards = document.querySelectorAll('.wood-card');
+  cards.forEach(function(card){
+    card.addEventListener('click', function(){
+      card.classList.toggle('flipped');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Búho GT — Portafolio de Francisco Cruz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+    a { color:#B8823C; text-decoration:none; }
+    .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+    .navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+    .label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+    .tag { display:inline-flex; align-items:center; padding:5px 12px; border-radius:100px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; background:#E8ECE7; color:#4F6355; }
+    .stat { display:flex; flex-direction:column; gap:4px; }
+    .stat b { font-size:19px; font-weight:500; }
+    .stat span { font-size:11.5px; color:#6B6B66; font-weight:300; }
+
+    .imgph { background:#EFE9DD; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; border-radius:2px; text-align:center; padding:16px; }
+    .imgph-cap { font-size:12px; color:#8b857a; font-weight:400; letter-spacing:0.01em; max-width:340px; line-height:1.5; }
+    .imgph.brand { background:#F2ECE1; }
+    .imgph.brand .imgph-cap { color:#9c8a6a; }
+    .imgph.real { padding:0; overflow:hidden; position:relative; background:#1A1A1A; }
+    .imgph.real img { width:100%; height:100%; object-fit:cover; display:block; }
+    .photo-cap { font-size:11.5px; color:#8b857a; font-weight:300; line-height:1.5; margin-top:8px; }
+
+    .sec { display:flex; gap:64px; padding:56px 64px 8px; }
+    .sec-label { width:220px; flex-shrink:0; }
+    .sec-body { max-width:680px; }
+    .sec-body p { font-size:15.5px; font-weight:300; line-height:1.75; margin:0 0 18px; color:#2c2c29; }
+    .sec-body p:last-child { margin-bottom:0; }
+    .flag { font-size:13px; font-weight:400; color:#9c7a3c; background:#F5EDDC; border-radius:2px; padding:10px 14px; margin:0 0 18px; line-height:1.6; }
+
+    .film-row { display:flex; gap:18px; overflow-x:auto; padding-bottom:4px; }
+    .film-item { flex:none; width:200px; display:flex; flex-direction:column; gap:8px; }
+    .film-item .imgph { height:150px; padding:10px; }
+    .film-item .imgph-cap { font-size:10.5px; max-width:170px; }
+    .film-num { font-family:'Poppins',sans-serif; font-size:10px; color:#B8823C; font-weight:600; letter-spacing:0.05em; }
+
+    .film-item.wide { width:420px; }
+    .film-item.wide .imgph { height:315px; }
+
+    .wood-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:8px auto 0; max-width:600px; }
+    .wood-card { display:flex; flex-direction:column; gap:9px; cursor:pointer; user-select:none; perspective:1200px; }
+    .wood-card-inner { position:relative; width:100%; aspect-ratio:2/3; transition:transform .6s ease; transform-style:preserve-3d; border-radius:3px; }
+    .wood-card.flipped .wood-card-inner { transform:rotateY(180deg); }
+    .wood-card-face { position:absolute; inset:0; backface-visibility:hidden; border-radius:3px; overflow:hidden; background:#EFE9DD; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+    .wood-card-face img { width:100%; height:100%; object-fit:contain; display:block; }
+    .wood-card-back { transform:rotateY(180deg); }
+    .wood-name { display:flex; justify-content:space-between; align-items:baseline; padding:0 2px; }
+    .wood-name b { font-size:12.5px; font-weight:500; color:#3a3a35; }
+    .wood-name span { font-size:10px; font-style:italic; color:#9C9890; font-weight:300; }
+
+    .coverflow { position:relative; margin:8px 64px 0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .coverflow-stage { position:relative; width:100%; height:100%; }
+    .cover-item { position:absolute; top:50%; left:50%; border-radius:3px; overflow:hidden; background:#1A1A1A; box-shadow:0 18px 40px rgba(0,0,0,0.28); transition:transform .35s ease, opacity .35s ease; cursor:pointer; }
+    .cover-item img { width:100%; height:100%; object-fit:cover; display:block; }
+    .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; background:#FAFAF8; border:1px solid #E0DACB; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:5; }
+    .carousel-arrow.prev { left:14px; }
+    .carousel-arrow.next { right:14px; }
+    .carousel-dots { display:flex; gap:6px; justify-content:center; margin-top:14px; }
+    .carousel-dot { width:6px; height:6px; border-radius:50%; background:#D8D2C4; cursor:pointer; }
+    .carousel-dot.active { background:#4F6355; }
+  .page { max-width:1440px; margin:0 auto; display:flex; flex-direction:column; zoom:0.75; }
+</style>
+
+</head>
+<body>
+
+<div class="page">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../../index-es.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <span style="color:#1A1A1A;">Trabajo Profesional</span>
+      <a href="../../creative-work/es.html">Exploraciones Creativas</a>
+      <a href="../../about-me/about-es.html">Sobre Mí</a>
+      <a href="../../contact-es.html">Contacto</a>
+      <div class="langsw">
+        <a href="en.html">EN</a><span class="sep">/</span><a class="cur" href="es.html">ES</a><span class="sep">/</span><a href="cs.html">CS</a>
+      </div>
+    </div>
+  </div><div style="display:flex;justify-content:space-between;padding:18px 64px 0;">
+    <a class="eyebrow" href="../es.html">← Volver a Trabajo Profesional</a><span class="eyebrow" style="color:#9C9890;">Proyecto 6 de 6</span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="padding:52px 64px 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
+    <div style="max-width:760px;">
+      <span class="tag">Proyecto Propio</span>
+      <h1 style="font-weight:300;font-size:46px;line-height:1.15;margin:16px 0 14px;">Búho GT</h1>
+      <p style="font-size:16px;font-weight:300;color:#6B6B66;line-height:1.6;margin:0;">Un pequeño negocio de tablas de picar en madera dura, diseñadas, hechas y vendidas directamente por mí, que pasó de ser un proyecto personal único a producción real.</p>
+    </div>
+    <div style="display:flex;gap:36px;padding-bottom:6px;">
+      <div class="stat"><b>Fundador</b><span>Rol</span></div>
+      <div class="stat"><b>Ago 2016 – Mar 2019</b><span>Período del proyecto</span></div>
+      <div class="stat"><b>~90 piezas</b><span>Dos líneas de producto, casi todo vendido</span></div>
+    </div>
+  </div>
+
+  <div class="imgph real" style="margin:8px 64px 0;height:560px;">
+    <img src="bh-hero.jpg" alt="Una pila de tablas de picar Búho GT terminadas, de grano final, sobre una mesa de madera">
+  </div>
+
+  <!-- ============ 01 HOW IT STARTED ============ -->
+  <div class="sec" style="padding-top:76px;">
+    <div class="sec-label"><div class="label">01 &nbsp; Cómo Empezó</div></div>
+    <div class="sec-body">
+      <p>Búho GT empezó como algo que hice para mí mismo, una tabla de picar cortada y terminada en el taller de la universidad, sin ningún plan de negocio detrás. La gente que la veía empezó a preguntarme si les podía hacer una también, y cuando ya me lo habían pedido suficientes personas, empecé a venderlas.</p>
+    </div>
+  </div>
+
+  <!-- ============ 02 TURNING IT INTO A BUSINESS ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">02 &nbsp; Convirtiéndolo en un Negocio</div></div>
+    <div class="sec-body">
+      <p>La mayor parte pasó de boca en boca. Nos presentamos en algunos mercados locales, que fue donde mucha gente vio las tablas por primera vez en persona, y lo llevamos junto con una página de Instagram y Facebook. Algunas tiendas locales tuvieron unas cuantas en consignación y vendieron algunas por ahí también.</p>
+    </div>
+  </div>
+
+  <!-- ============ 03 THE CRAFT ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">03 &nbsp; El Oficio</div></div>
+    <div class="sec-body">
+      <p>Antes de decidirme por un diseño, investigué distintas formas de acomodar la madera y terminé eligiendo el grano final, la misma construcción que usan las tablas de picar profesionales: las fibras quedan hacia arriba en vez de correr a lo largo de la superficie, así que el cuchillo corta entre ellas en vez de atravesarlas, lo cual es más suave tanto para la hoja como para la tabla. El grano final también hace que la madera luzca mejor: el patrón y el color de cada especie se ven más claros que en una superficie de grano plano, lo cual importaba porque parte de la idea era mostrar las maderas duras guatemaltecas.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0 348px;display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:620px;">
+    <div>
+      <div class="imgph real" style="height:331px;background:#FAFAF8;"><img src="bh-endgrain.jpg" alt="Diagrama que compara el grano final con el grano de canto y el grano de cara" style="object-fit:contain;"></div>
+      <div class="photo-cap">Grano final vs. grano de canto y de cara: por qué importa la dirección de la fibra</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:331px;background:#FAFAF8;"><img src="bh-knife.jpg" alt="Diagrama que muestra la hoja de un cuchillo entrando al grano final entre las fibras" style="object-fit:contain;"></div>
+      <div class="photo-cap">Cómo la hoja se encuentra con el grano final: entre las fibras, no a través de ellas, lo que evita que la tabla se marque y que el cuchillo se desafile</div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:36px;">
+    <div class="sec-label"></div>
+    <div class="sec-body">
+      <p>El producto original era una tabla de picar de verdad, de madera dura, construida y terminada con mucha atención al grano. Después agregué un segundo producto más sencillo, una tabla de quesos básica que se saltaba el trabajo técnico de combinar los granos, hecha solo para verse bien, a un precio más bajo. Tener dos niveles significaba que la gente podía comprar según lo que quisiera gastar.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:457px;">
+      <div class="imgph real" style="height:304px;width:457px;"><img src="bh-sketches.jpg" alt="Una tabla de grano final tipo tablero de ajedrez terminada junto a sus bocetos de diseño originales" style="width:457px;height:304px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Una tabla terminada junto a los bocetos con los que empezó</div>
+    </div>
+    <div style="width:199px;">
+      <div class="imgph real" style="height:304px;width:199px;"><img src="bh-packaging-sketches.jpg" alt="Bocetos de conceptos de empaque dibujados a mano, etiquetados como Empaque" style="width:199px;height:304px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Primeros conceptos de empaque, dibujados a mano</div>
+    </div>
+  </div>
+
+  <div style="margin:40px 64px 0;">
+    <div class="label" style="margin-bottom:10px;">Las tablas de quesos</div>
+    <div class="coverflow" style="height:340px;">
+      <button class="carousel-arrow prev" onclick="bhCheeseMove(-1)" aria-label="Previous cheese board photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"></path></svg>
+      </button>
+      <div class="coverflow-stage" id="bhCheeseStage"></div>
+      <button class="carousel-arrow next" onclick="bhCheeseMove(1)" aria-label="Next cheese board photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"></path></svg>
+      </button>
+    </div>
+    <div style="text-align:center;margin:14px 0 0;">
+      <span class="label" id="bhCheeseCap" style="color:#6B6B66;">Tabla de quesos, vista 1 de 7</span>
+    </div>
+    <div class="carousel-dots" id="bhCheeseDots"></div>
+  </div>
+
+  <div style="margin:40px 64px 0;">
+    <div class="label" style="margin-bottom:10px;">Las tablas de picar</div>
+    <div class="coverflow" style="height:340px;">
+      <button class="carousel-arrow prev" onclick="bhBlockMove(-1)" aria-label="Previous butcher block photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"></path></svg>
+      </button>
+      <div class="coverflow-stage" id="bhBlockStage"></div>
+      <button class="carousel-arrow next" onclick="bhBlockMove(1)" aria-label="Next butcher block photo">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"></path></svg>
+      </button>
+    </div>
+    <div style="text-align:center;margin:14px 0 0;">
+      <span class="label" id="bhBlockCap" style="color:#6B6B66;">Tabla, vista 1 de 18</span>
+    </div>
+    <div class="carousel-dots" id="bhBlockDots"></div>
+  </div>
+
+  <!-- ============ 04 THE WOOD ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">04 &nbsp; La Madera</div></div>
+    <div class="sec-body">
+      <p>Cada tabla usa maderas duras guatemaltecas reales, e investigué las especies lo suficiente como para diseñar un set de postales para ellas, una por especie: una ilustración botánica de estilo científico en el frente, la madera terminada y trabajada en el reverso. Hacé clic en una tarjeta para voltearla.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 0 14px;text-align:center;font-size:11.5px;letter-spacing:0.04em;color:#B8823C;font-weight:400;display:flex;align-items:center;justify-content:center;gap:6px;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2"><path d="M9 15l3 3 3-3M9 9l3-3 3 3"></path><path d="M12 3v18"></path></svg>
+    Hacé clic en una tarjeta para voltearla
+  </div>
+
+  <div class="wood-grid">
+    <div class="wood-card" data-key="w1">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-01-front.jpg" alt="Cedro, Cedrela odorata, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-01-back.jpg" alt="Grano de madera terminado: Cedro"></div>
+      </div>
+      <div class="wood-name"><b>Cedro</b><span>Cedrela odorata</span></div>
+    </div>
+    <div class="wood-card" data-key="w2">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-02-front.jpg" alt="Nogal, Juglans olanchana, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-02-back.jpg" alt="Grano de madera terminado: Nogal"></div>
+      </div>
+      <div class="wood-name"><b>Nogal</b><span>Juglans olanchana</span></div>
+    </div>
+    <div class="wood-card" data-key="w3">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-03-front.jpg" alt="Palo Blanco, Roseodendron donnell-smithii, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-03-back.jpg" alt="Grano de madera terminado: Palo Blanco"></div>
+      </div>
+      <div class="wood-name"><b>Palo Blanco</b><span>Roseodendron donnell-smithii</span></div>
+    </div>
+    <div class="wood-card" data-key="w4">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-04-front.jpg" alt="Bálsamo, Myroxylon balsamum, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-04-back.jpg" alt="Grano de madera terminado: Bálsamo"></div>
+      </div>
+      <div class="wood-name"><b>Bálsamo</b><span>Myroxylon balsamum</span></div>
+    </div>
+    <div class="wood-card" data-key="w5">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-05-front.jpg" alt="Santa María, Calophyllum brasiliense, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-05-back.jpg" alt="Grano de madera terminado: Santa María"></div>
+      </div>
+      <div class="wood-name"><b>Santa María</b><span>Calophyllum brasiliense</span></div>
+    </div>
+    <div class="wood-card" data-key="w6">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-06-front.jpg" alt="Caoba, Swietenia macrophylla, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-06-back.jpg" alt="Grano de madera terminado: Caoba"></div>
+      </div>
+      <div class="wood-name"><b>Caoba</b><span>Swietenia macrophylla</span></div>
+    </div>
+    <div class="wood-card" data-key="w7">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-07-front.jpg" alt="Matilisguate, Tabebuia rosea, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-07-back.jpg" alt="Grano de madera terminado: Matilisguate"></div>
+      </div>
+      <div class="wood-name"><b>Matilisguate</b><span>Tabebuia rosea</span></div>
+    </div>
+    <div class="wood-card" data-key="w8">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-08-front.jpg" alt="Rosul, Dalbergia stevensonii, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-08-back.jpg" alt="Grano de madera terminado: Rosul"></div>
+      </div>
+      <div class="wood-name"><b>Rosul</b><span>Dalbergia stevensonii</span></div>
+    </div>
+    <div class="wood-card" data-key="w9">
+      <div class="wood-card-inner">
+        <div class="wood-card-face wood-card-front"><img src="bh-wood-09-front.jpg" alt="Conacaste, Enterolobium cyclocarpum, ilustración botánica"></div>
+        <div class="wood-card-face wood-card-back"><img src="bh-wood-09-back.jpg" alt="Grano de madera terminado: Conacaste"></div>
+      </div>
+      <div class="wood-name"><b>Conacaste</b><span>Enterolobium cyclocarpum</span></div>
+    </div>
+  </div>
+
+  <!-- ============ 05 GROWING IT ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">05 &nbsp; Haciéndolo Crecer</div></div>
+    <div class="sec-body">
+      <p>La demanda llegó al punto en que tuve que dejar de hacer cada pieza yo mismo y dejar de depender del taller de la universidad. Contraté a un carpintero, alguien que hacía muebles pero que nunca había hecho una tabla de picar, compré la madera yo mismo y se la llevé, y le expliqué paso a paso cómo hacerlas. Funcionó bien, él le agarró la onda y siguió haciéndolas con nosotros. Las tablas no eran baratas: la cantidad de madera y el trabajo que llevaba cada una significaban un precio real, y la gente lo pagaba.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:236px;">
+      <div class="imgph real" style="height:236px;width:236px;"><img src="bh-carpenter-you.jpg" alt="Francisco dibujando un diseño en el taller" style="width:236px;height:236px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Pensando un diseño en el taller</div>
+    </div>
+    <div style="width:420px;">
+      <div class="imgph real" style="height:236px;width:420px;"><img src="bh-carpenter-him.jpg" alt="El carpintero revisando una pieza en proceso" style="width:420px;height:236px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">El carpintero al que capacité y con quien trabajé</div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:453px;">
+      <div class="imgph real" style="height:339px;width:453px;"><img src="bh-stock-blocks.jpg" alt="Madera dura en bruto apilada antes de cortarse en tablas de picar" style="width:453px;height:339px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Madera en bruto antes de convertirse en tabla</div>
+    </div>
+    <div style="width:203px;">
+      <div class="imgph real" style="height:339px;width:203px;"><img src="bh-stock-cheeseboard.jpg" alt="Madera dura en bruto para las tablas de quesos" style="width:203px;height:339px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">Madera apartada para las tablas de quesos</div>
+    </div>
+  </div>
+
+  <!-- ============ 06 WHERE IT IS NOW ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">06 &nbsp; Dónde Está Ahora</div></div>
+    <div class="sec-body">
+      <p>Entre dos lotes hicimos unas 40 tablas de picar, más unas 50 de las tablas de quesos más sencillas, y vendimos casi todo. Búho ya no está activo hoy, pero fue donde aprendí por primera vez lo que realmente se necesita para diseñar algo, hacerlo con calidad real, y venderlo directamente a la gente que lo quería.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div>
+      <div class="imgph real" style="height:360px;"><img src="bh-batch-1.jpg" alt="Un lote terminado de tablas de picar apiladas y listas"></div>
+      <div class="photo-cap">Un lote terminado, apilado y listo</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:360px;"><img src="bh-batch-2.jpg" alt="Un lote terminado de tablas de picar apiladas y listas"></div>
+      <div class="photo-cap">Dos lotes, unas 90 piezas en total</div>
+    </div>
+  </div>
+
+  <!-- ============ 07 BRAND & IDENTITY (CLOSING) ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">07 &nbsp; Marca e Identidad</div></div>
+    <div class="sec-body">
+      <p>El producto vino con su propia identidad: un logotipo de texto y un símbolo de búho que diseñé juntos como un logo combinado, un logo grabado con láser directamente en cada tabla, un sello de goma usado en las bolsas y el empaque, un pequeño manual sobre cómo cuidar la tabla, además de la presencia en Instagram y Facebook que fue la que más corrió la voz.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 64px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+    <div>
+      <div class="imgph real" style="height:260px;"><img src="bh-logo-iso.jpg" alt="El logo combinado de Búho, el logotipo de texto y el ícono del búho juntos"></div>
+      <div class="photo-cap">Logo combinado</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:260px;"><img src="bh-logo-type.jpg" alt="El logotipo de texto de Búho solo"></div>
+      <div class="photo-cap">Logotipo</div>
+    </div>
+    <div>
+      <div class="imgph real" style="height:260px;"><img src="bh-logo-mark.jpg" alt="El ícono del búho solo"></div>
+      <div class="photo-cap">Ícono</div>
+    </div>
+  </div>
+
+  <div style="margin:24px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:328px;">
+      <div class="imgph real" style="height:246px;width:328px;"><img src="bh-stamp-design.jpg" alt="El troquel de grabado cortado con láser usado para el sello del logo" style="width:328px;height:246px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">El troquel de grabado, cortado con láser para el sello</div>
+    </div>
+    <div style="width:328px;">
+      <div class="imgph real" style="height:246px;width:328px;"><img src="bh-packaging.jpg" alt="Una tabla con la marca del sello impresa en el envoltorio, lista para enviar" style="width:328px;height:246px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">La marca, sellada y envuelta en una tabla terminada</div>
+    </div>
+  </div>
+
+  <div style="margin:24px 0 0 348px;max-width:680px;">
+    <div class="imgph real" style="height:auto;"><img src="bh-fullset.jpg" alt="El sistema completo de Búho GT: una tabla envuelta, aceite de cuidado, manual y tarjeta de presentación juntos" style="width:100%;height:auto;display:block;object-fit:contain;"></div>
+    <div class="photo-cap">El sistema terminado: tabla, aceite de cuidado, manual y empaque juntos</div>
+  </div>
+
+  <div style="margin:24px 0 0 348px;display:flex;gap:24px;align-items:flex-start;">
+    <div style="width:237px;">
+      <div class="imgph real" style="height:296px;width:237px;"><img src="bh-social.jpg" alt="Una cuadrícula de publicaciones de Instagram de la cuenta de Búho GT" style="width:237px;height:296px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">La cuadrícula de Instagram que llevó la mayor parte del boca en boca</div>
+    </div>
+    <div style="width:419px;">
+      <div class="imgph real" style="height:296px;width:419px;"><img src="bh-onshop.jpg" alt="Tablas de Búho GT exhibidas a la venta en un estante en The Kitchen" style="width:419px;height:296px;display:block;object-fit:contain;"></div>
+      <div class="photo-cap">En el estante de una de las tiendas que las vendía</div>
+    </div>
+  </div>
+
+  <!-- ============ CLOSING CAROUSEL ============ -->
+  <div class="sec" style="padding-top:56px;">
+    <div class="sec-label"><div class="label">En Uso</div></div>
+    <div class="sec-body">
+      <p>Algunas de las tablas realmente en uso, cortando, sirviendo, aguantando el trabajo diario de cocina en vez de solo quedarse como objetos de exhibición.</p>
+    </div>
+  </div>
+
+  <div class="coverflow" style="height:400px;">
+    <button class="carousel-arrow prev" onclick="bhCarouselMove(-1)" aria-label="Previous photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"></path></svg>
+    </button>
+    <div class="coverflow-stage" id="bhCoverStage"></div>
+    <button class="carousel-arrow next" onclick="bhCarouselMove(1)" aria-label="Next photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"></path></svg>
+    </button>
+  </div>
+  <div style="text-align:center;margin:16px 64px 0;">
+    <span class="label" id="bhCarouselCap" style="color:#6B6B66;">Una tabla en uso, vista 1 de 6</span>
+  </div>
+  <div class="carousel-dots" id="bhCarouselDots"></div>
+
+  <script>
+  (function(){
+    function initCoverflow(cfg){
+      var total = cfg.images.length, idx = 0;
+      var stage = document.getElementById(cfg.stageId);
+      var cap = document.getElementById(cfg.capId);
+      var dotsEl = document.getElementById(cfg.dotsId);
+      var items = [];
+      for (var i=0;i<total;i++){
+        var el = document.createElement('div');
+        el.className = 'cover-item';
+        el.style.width = cfg.w + 'px';
+        el.style.height = cfg.h + 'px';
+        var img = document.createElement('img');
+        img.src = cfg.images[i];
+        img.alt = cfg.label + ', ' + (i+1) + ' de ' + total;
+        el.appendChild(img);
+        el.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        stage.appendChild(el);
+        items.push(el);
+      }
+      for (var i=0;i<total;i++){
+        var d = document.createElement('div');
+        d.className = 'carousel-dot' + (i===0?' active':'');
+        d.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        dotsEl.appendChild(d);
+      }
+      function setIdx(n){
+        idx = (n+total)%total;
+        for (var j=0;j<total;j++){
+          var diff = j - idx;
+          if (diff > total/2) diff -= total;
+          if (diff < -total/2) diff += total;
+          var ad = Math.abs(diff);
+          var el = items[j];
+          if (ad > 3){ el.style.opacity = '0'; el.style.pointerEvents = 'none'; el.style.zIndex = '0'; continue; }
+          var scale = ad===0 ? 1 : (ad===1 ? 0.74 : (ad===2 ? 0.56 : 0.42));
+          var op = ad===0 ? 1 : (ad===1 ? 0.55 : (ad===2 ? 0.24 : 0.1));
+          var x = diff * cfg.spacing;
+          el.style.transform = 'translate(-50%,-50%) translateX(' + x + 'px) scale(' + scale + ')';
+          el.style.opacity = String(op);
+          el.style.pointerEvents = 'auto';
+          el.style.zIndex = String(100 - ad);
+        }
+        cap.textContent = cfg.label + ', ' + (idx+1) + ' de ' + total;
+        var dots = dotsEl.children;
+        for (var k=0;k<dots.length;k++){ dots[k].className = 'carousel-dot' + (k===idx?' active':''); }
+      }
+      setIdx(0);
+      return function(delta){ setIdx(idx+delta); };
+    }
+
+    window.bhCarouselMove = initCoverflow({
+      stageId:'bhCoverStage', capId:'bhCarouselCap', dotsId:'bhCarouselDots',
+      images:['bh-final-1.jpg','bh-final-2.jpg','bh-final-3.jpg','bh-final-4.jpg','bh-final-5.jpg','bh-final-6.jpg'],
+      label:'Una tabla en uso, vista', w:480, h:320, spacing:300
+    });
+
+    window.bhCheeseMove = initCoverflow({
+      stageId:'bhCheeseStage', capId:'bhCheeseCap', dotsId:'bhCheeseDots',
+      images:['bh-cheeseboard-1.jpg','bh-cheeseboard-2.jpg','bh-cheeseboard-3.jpg','bh-cheeseboard-4.jpg','bh-cheeseboard-5.jpg','bh-cheeseboard-6.jpg','bh-cheeseboard-7.jpg'],
+      label:'Tabla de quesos, vista', w:420, h:280, spacing:260
+    });
+
+    window.bhBlockMove = initCoverflow({
+      stageId:'bhBlockStage', capId:'bhBlockCap', dotsId:'bhBlockDots',
+      images:['bh-block-1.jpg','bh-block-1-detail.jpg','bh-block-3.jpg','bh-block-3-detail.jpg','bh-block-4.jpg','bh-block-4-detail.jpg','bh-block-7.jpg','bh-block-7-detail.jpg','bh-block-8.jpg','bh-block-8-detail.jpg','bh-block-9.jpg','bh-block-9-detail.jpg','bh-block-10.jpg','bh-block-10-detail.jpg','bh-block-11.jpg','bh-block-11-detail.jpg','bh-block-12.jpg','bh-block-12-detail.jpg'],
+      label:'Tabla, vista', w:420, h:280, spacing:260
+    });
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var grid = document.querySelector('.wood-grid');
+    if (!grid || typeof IntersectionObserver === 'undefined') return;
+    var hinted = false;
+    var HINT_INDEXES = [0, 4, 8]; // spread across the 3x3 grid: top-left, center, bottom-right
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting && !hinted) {
+          hinted = true;
+          var cards = grid.querySelectorAll('.wood-card');
+          HINT_INDEXES.forEach(function(i){
+            var card = cards[i];
+            if (!card) return;
+            setTimeout(function(){ card.classList.add('flipped'); }, 550);
+            setTimeout(function(){ card.classList.remove('flipped'); }, 1600);
+          });
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    io.observe(grid);
+  })();
+  </script>
+
+    <!-- ============ NEXT PROJECT ============ -->
+  <a href="../miners/es.html" style="display:flex;justify-content:space-between;align-items:center;padding:72px 64px 40px;border-top:1px solid #E5E2DA;margin-top:56px;text-decoration:none;">
+    <span class="navlabel">Siguiente Proyecto</span>
+    <span style="font-size:18px;font-weight:400;color:#1A1A1A;">The Miners →</span>
+  </a>
+
+  <div style="flex:1;"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · linkedin.com/in/franciscocruz90 · Praga, Chequia</span>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var cards = document.querySelectorAll('.wood-card');
+  cards.forEach(function(card){
+    card.addEventListener('click', function(){
+      card.classList.toggle('flipped');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

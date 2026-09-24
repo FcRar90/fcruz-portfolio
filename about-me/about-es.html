@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Sobre mí — Francisco Cruz</title>
+<meta name="description" content="Diseñador industrial especializado en diseño de mobiliario y visualización 3D. Trayectoria, formación, experiencia y línea de tiempo profesional.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" hreflang="en" href="about-en.html">
+<link rel="alternate" hreflang="es" href="about-es.html">
+<link rel="alternate" hreflang="cs" href="about-cs.html">
+<link rel="alternate" hreflang="x-default" href="about-en.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+a { color:#B8823C; text-decoration:none; }
+img { max-width:100%; }
+.eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+.navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+.navlabel a { color:#6B6B66; }
+.navlabel a:hover { color:#1A1A1A; }
+.label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+.imgph { background:#EFE9DD; display:flex; align-items:center; justify-content:center; }
+.pill { display:inline-flex; padding:3px 10px; border-radius:100px; background:#F2EFE8; font-size:10px; letter-spacing:0.05em; color:#6B6B66; font-weight:400; }
+
+.page { max-width:1440px; margin:0 auto; display:flex; flex-direction:column; zoom:0.75; }
+
+.langsw { display:flex; gap:8px; align-items:center; padding-left:24px; border-left:1px solid #E5E2DA; }
+.langsw .cur { color:#1A1A1A; font-weight:600; }
+.langsw .sep { color:#D8D3C6; }
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+    a { color:#B8823C; text-decoration:none; }
+    .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+    .navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+    .label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+    .imgph { background:#EFE9DD; display:flex; align-items:center; justify-content:center; }
+    .pill { display:inline-flex; padding:3px 10px; border-radius:100px; background:#F2EFE8; font-size:10px; letter-spacing:0.05em; color:#6B6B66; font-weight:400; }
+
+    /* --- three-column layout --- */
+    .cols { display:grid; grid-template-columns:1fr 3fr 1fr; gap:48px; padding:48px 64px 0; align-items:start; }
+    .col-left { display:flex; flex-direction:column; gap:22px; position:sticky; top:32px; }
+    .col-right { }
+
+    .sb-photo { width:100%; aspect-ratio:4/5; border-radius:2px; overflow:hidden; }
+    .sb-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+    .sb-name { font-size:18px; font-weight:600; margin:0 0 2px; }
+    .sb-role { font-size:12px; color:#6B6B66; font-weight:300; line-height:1.5; }
+    .sb-contact { display:flex; flex-direction:column; gap:10px; padding-top:4px; border-top:1px solid #E5E2DA; }
+    .sb-row { font-size:12.5px; color:#3a3a37; font-weight:300; line-height:1.5; }
+    .sb-row .sb-k { display:block; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#9C9890; margin-bottom:2px; }
+    .sb-dl { display:flex; align-items:center; gap:10px; padding:11px 14px; border:1px solid #E2DED3; border-radius:2px; cursor:pointer; user-select:none; }
+    .sb-dl span { font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#1A1A1A; font-weight:500; }
+    .sb-dl .chev { margin-left:auto; transition:transform .15s ease; }
+
+    .dl-wrap { position:relative; }
+    .dl-menu { position:absolute; top:calc(100% + 6px); left:0; right:0; background:#FFFFFF; border:1px solid #E2DED3; border-radius:2px; box-shadow:0 10px 28px rgba(26,26,26,.10); opacity:0; visibility:hidden; transform:translateY(-4px); transition:opacity .15s ease, transform .15s ease; z-index:30; overflow:hidden; }
+    .dl-wrap.open .dl-menu { opacity:1; visibility:visible; transform:translateY(0); }
+    .dl-wrap.open .sb-dl .chev { transform:rotate(180deg); }
+    .dl-menu a { display:flex; align-items:center; gap:8px; padding:10px 14px; font-size:11.5px; letter-spacing:0.04em; color:#3a3a37; text-decoration:none; border-bottom:1px solid #F1EFE8; }
+    .dl-menu a:last-child { border-bottom:none; }
+    .dl-menu a:hover { background:#FAF7F0; color:#B8823C; }
+
+    /* --- experience / timeline, matching the CV print layout --- */
+    .exp-row { border-top:1px solid #E5E2DA; padding:22px 0; }
+    .exp-row:last-child { padding-bottom:0; }
+    .exp-top { display:flex; align-items:flex-start; gap:24px; margin-bottom:10px; }
+    .exp-when { width:130px; flex-shrink:0; font-size:12.5px; color:#6B6B66; font-weight:300; padding-top:2px; }
+    .exp-titlewrap { flex:1; min-width:0; }
+    .exp-title { font-size:15.5px; font-weight:500; }
+    .exp-company { font-size:13.5px; color:#6B6B66; font-weight:300; margin-top:1px; }
+    .exp-body { padding-left:154px; }
+    .exp-intro { font-size:13px; color:#3a3a37; font-weight:300; line-height:1.65; margin:0 0 14px; max-width:640px; }
+    .exp-bullets { margin:0; padding:0; list-style:none; max-width:640px; }
+    .exp-bullets li { position:relative; padding-left:14px; font-size:13px; color:#3a3a37; font-weight:300; line-height:1.65; margin-bottom:7px; }
+    .exp-bullets li::before { content:"–"; position:absolute; left:0; color:#B8B09A; }
+    .exp-bullets.exp-extra { margin-top:7px; }
+    .exp-more { display:inline-flex; align-items:center; gap:5px; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:#B8823C; cursor:pointer; margin-top:6px; user-select:none; }
+    .exp-more svg { transition:transform .2s ease; }
+    .exp-more.open svg { transform:rotate(180deg); }
+    .exp-panel { max-height:0; overflow:hidden; transition:max-height .28s ease; }
+
+    .stage-track { position:relative; padding-left:20px; margin-top:4px; }
+    .stage-track::before { content:""; position:absolute; left:4px; top:5px; bottom:8px; width:1px; background:#E2DED3; }
+    .stage-item { position:relative; margin-bottom:22px; }
+    .stage-item:last-child { margin-bottom:0; }
+    .stage-item::before { content:""; position:absolute; left:-20px; top:5px; width:6px; height:6px; border-radius:50%; background:#C79A56; border:2px solid #FAFAF8; }
+    .stage-head { display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:6px; }
+    .stage-title { font-size:13.5px; font-weight:500; }
+    .stage-dates { font-size:11.5px; color:#9C9890; font-weight:300; white-space:nowrap; flex-shrink:0; }
+
+    /* --- visual career timeline (full width, bottom of page) --- */
+    .tl-section { padding:64px 64px 0; border-top:1px solid #E5E2DA; margin-top:56px; }
+    .tl-head { padding-top:48px; margin-bottom:6px; }
+    .tl-intro { font-size:13px; color:#6B6B66; font-weight:300; max-width:680px; line-height:1.6; margin:6px 0 0; }
+    .tl-chart { font-family:'IBM Plex Mono',monospace; margin-top:30px; }
+    .tl-ruler-row { display:flex; align-items:stretch; }
+    .tl-spacer { width:150px; flex:none; }
+    .tl-ruler { position:relative; height:24px; flex:1; border-bottom:1px solid #DDD1B8; }
+    .tl-ruler .tick { position:absolute; bottom:0; width:1px; height:7px; background:#DDD1B8; }
+    .tl-ruler .tick.major { height:11px; background:#9C9890; }
+    .tl-ruler .yr { position:absolute; bottom:11px; transform:translateX(2px); font-size:10px; color:#9C9890; }
+    .tl-body { position:relative; }
+    .tl-today { position:absolute; top:0; bottom:0; width:0; border-left:1.5px dashed #AE4633; z-index:5; }
+    .tl-today-label { position:absolute; top:-16px; transform:translateX(-50%); font-size:9.5px; color:#AE4633; white-space:nowrap; letter-spacing:0.02em; }
+    .tl-lane { position:relative; display:flex; align-items:stretch; border-bottom:1px solid #E5E2DA; padding:12px 0; }
+    .tl-lane:last-of-type { border-bottom:none; }
+    .tl-lane-label { width:150px; flex:none; padding-right:14px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; color:#9C9890; display:flex; align-items:center; line-height:1.4; }
+    .tl-track { position:relative; flex:1; min-height:34px; }
+    .tl-bar { position:absolute; height:30px; top:2px; border-radius:3px; color:#fff; box-shadow:0 1px 2px rgba(34,31,26,.1); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:500; overflow:hidden; white-space:nowrap; padding:0 6px; }
+    .tl-bar.employment { background:#B8823C; }
+    .tl-bar.venture { background:#5E7A5C; }
+    .tl-bar.edu { background:#3F6C87; }
+    .tl-bar.present::after { content:"→"; position:absolute; right:-13px; color:#B8823C; font-weight:700; }
+    .tl-legend { display:flex; flex-wrap:wrap; gap:16px 26px; margin:22px 0 40px; padding-top:16px; border-top:1px solid #E5E2DA; font-family:'Poppins',sans-serif; }
+    .tl-legend-item { display:flex; align-items:center; gap:8px; font-size:12px; color:#6B6B66; font-weight:300; }
+    .tl-swatch { width:15px; height:11px; border-radius:2px; flex:none; }
+
+    /* --- courses / volunteer / entrepreneurship, inside the center column --- */
+    .extra-section { padding-top:40px; border-top:1px solid #E5E2DA; margin-top:8px; }
+    .extra-group { }
+    .extra-group + .extra-group { margin-top:44px; }
+    .extra-row { display:flex; align-items:flex-start; gap:24px; padding:16px 0; border-top:1px solid #E5E2DA; }
+    .extra-row:first-child { border-top:none; padding-top:0; }
+    .extra-when { width:130px; flex-shrink:0; font-size:12.5px; color:#6B6B66; font-weight:300; line-height:1.5; padding-top:2px; }
+    .extra-when .loc { color:#9C9890; }
+    .extra-main { flex:1; min-width:0; }
+    .extra-top { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; }
+    .extra-title { font-size:15px; font-weight:500; }
+    .extra-sub { font-size:12.5px; color:#6B6B66; font-weight:300; font-style:italic; margin-top:1px; line-height:1.5; }
+    .extra-loc { font-size:12px; color:#9C9890; font-weight:300; font-style:italic; white-space:nowrap; }
+    .extra-body { font-size:13px; color:#3a3a37; font-weight:300; line-height:1.65; margin:10px 0 0; max-width:640px; }
+    .extra-contact { display:flex; flex-wrap:wrap; gap:8px 40px; margin-top:14px; font-size:12.5px; color:#3a3a37; font-weight:300; }
+    .extra-contact span.k { color:#9C9890; }
+
+@media (max-width: 900px) {
+  .cols { grid-template-columns:1fr !important; padding-left:24px !important; padding-right:24px !important; }
+  .col-left { position:static !important; }
+  .exp-body { padding-left:0 !important; margin-top:8px; }
+  .tl-section { padding-left:24px !important; padding-right:24px !important; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../index-es.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <a href="../professional-work/es.html">Trabajo Profesional</a>
+      <a href="../creative-work/es.html">Exploraciones Creativas</a>
+      <span style="color:#1A1A1A;">Sobre Mí</span>
+      <a href="../contact-es.html">Contacto</a>
+      <div class="langsw">
+        <a href="about-en.html">EN</a><span class="sep">/</span><a class="cur" href="about-es.html">ES</a><span class="sep">/</span><a href="about-cs.html">CS</a>
+      </div>
+    </div>
+  </div><div style="display:flex;justify-content:space-between;padding:18px 64px 0;">
+    <span class="eyebrow">Sobre Mí</span><span class="eyebrow" style="color:#9C9890;">Portafolio — 2026</span>
+  </div>
+
+  <!-- ===================== THREE-COLUMN LAYOUT ===================== -->
+  <div class="cols">
+
+    <!-- LEFT — photo + contact, ~1/5 -->
+    <div class="col-left">
+      <div class="sb-photo imgph">
+        <img src="images/about-headshot.jpg" alt="Francisco Cruz">
+      </div>
+      <div>
+        <div class="sb-name">Francisco Cruz</div>
+        <div class="sb-role">Diseñador Industrial — Diseño de Mobiliario y Visualización 3D</div>
+      </div>
+      <div class="sb-contact">
+        <div class="sb-row"><span class="sb-k">Correo</span>hello@fcruz.work</div>
+        <div class="sb-row"><span class="sb-k">Teléfono</span>+420 723 184 035</div>
+        <div class="sb-row"><span class="sb-k">Dirección</span>Libeň, Praga 8, Chequia</div>
+      </div>
+      <div class="dl-wrap" id="cvDlWrap">
+        <div class="sb-dl" id="cvDlBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="1.6"><path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          <span>Descargar CV (PDF)</span>
+          <svg class="chev" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9C9890" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="dl-menu">
+          <a href="cv/Francisco_Cruz_CV_EN.pdf" download>CV — English</a>
+          <a href="cv/Francisco_Cruz_CV_CS.pdf" download>CV — Čeština</a>
+          <a href="cv/Francisco_Cruz_CV_ES.pdf" download>CV — Español</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER — bio, education, skills, experience, ~3/5 -->
+    <div class="col-center">
+      <h1 style="font-weight:300;font-size:32px;margin:0 0 22px;line-height:1.25;">Diseñador industrial especializado en diseño de mobiliario y visualización 3D.</h1>
+      <p style="font-size:15px;font-weight:300;color:#3a3a37;line-height:1.75;margin:0 0 16px;">Mi trabajo abarca desde los primeros bocetos conceptuales hasta la documentación lista para producción. Mi trayectoria combina diseño de mobiliario y documentación técnica para manufactura, entre Ciudad de Guatemala y, desde 2024, Praga.</p>
+      <p style="font-size:15px;font-weight:300;color:#3a3a37;line-height:1.75;margin:0 0 16px;">Sólidas habilidades de modelado 3D en Rhino y AutoCAD, con experiencia adicional en AutoCAD 2D, SketchUp, software de renderizado y Adobe Suite.</p>
+      <p style="font-size:15px;font-weight:300;color:#3a3a37;line-height:1.75;margin:0 0 36px;">Maestría en Future Design (con distinción, Teesside University / Prague College) y Licenciatura en Diseño Industrial.</p>
+
+      <div style="display:flex;gap:40px;padding-bottom:40px;border-bottom:1px solid #E5E2DA;margin-bottom:44px;">
+        <div style="flex:1;">
+          <div class="label" style="margin-bottom:16px;">Formación</div>
+          <div style="margin-bottom:18px;">
+            <div style="font-size:15px;font-weight:500;">Maestría, Future Design (con distinción)</div>
+            <div style="font-size:12.5px;color:#6B6B66;font-weight:300;">Teesside University (Reino Unido) / Prague College — 2023–2025</div>
+          </div>
+          <div>
+            <div style="font-size:15px;font-weight:500;">Licenciatura, Diseño Industrial</div>
+            <div style="font-size:12.5px;color:#6B6B66;font-weight:300;">Universidad Rafael Landívar — 2015–2021</div>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div class="label" style="margin-bottom:16px;">Habilidades y software</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;">
+            <span class="pill">Rhino 3D</span><span class="pill">AutoCAD</span><span class="pill">SketchUp</span>
+            <span class="pill">KeyShot</span><span class="pill">D5 Render</span><span class="pill">PrusaSlicer</span>
+            <span class="pill">Photoshop</span><span class="pill">Illustrator</span><span class="pill">Figma</span>
+            <span class="pill">Carpintería manual</span><span class="pill">Fundición de resina</span><span class="pill">Logística de exportación</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="label" style="margin-bottom:4px;">Experiencia</div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">Dic 2025 — Presente</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Diseño de Interiores y Visualizador 3D</div>
+            <div class="exp-company">The Miners (Coffee Giants a.s.), Praga</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Elaboré planos técnicos de mobiliario y acondicionamiento para la apertura de más de 10 nuevas cafeterías en cinco países (Bélgica, Chipre, Chequia, Portugal y España).</li>
+            <li>Apliqué conocimiento práctico de los requisitos de equipamiento de cafeterías para resolver conflictos de instalación, y convertí el diseño del arquitecto en documentación lista para el contratista en la fabricación de mobiliario a medida.</li>
+            <li>Diseñé piezas de mobiliario a medida para solicitudes específicas de clientes, desde el boceto inicial hasta la documentación técnica lista para fabricación.</li>
+          </ul>
+          <div class="exp-more" id="btn-miners" onclick="toggleExp('miners')"><span class="exp-more-label">Ver más </span>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="exp-panel" id="panel-miners" style="max-height:0px;">
+            <ul class="exp-bullets exp-extra">
+              <li>Recopilé especificaciones de fabricantes y dimensiones clave para construir bloques técnicos de entre 20 y más de 30 piezas de equipamiento de cafetería, creando la biblioteca y los estándares de plantillas AutoCAD que ahora se usan en todo el estudio.</li>
+              <li>Modelé opciones de concepto 3D en Rhino para el nuevo formato de cafetería tipo kiosco de la empresa, presentando múltiples iteraciones de diseño para revisión y aprobación interna.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">Oct 2024 — Nov 2025</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Asistente de Estudio</div>
+            <div class="exp-company">Jiri Krejcirik Studio, Praga</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Traduje conceptos en modelos 3D para colecciones de iluminación, mobiliario y accesorios, y posteriormente en documentación técnica para producción.</li>
+            <li>Aporté modelos 3D detallados utilizados para producir la documentación técnica 2D de fabricación de las "B1 Lamps" de Skoba, diseñadas por Jiri Krejcirik.</li>
+            <li>Trabajé en el stand del estudio en la edición 2025 del Salone del Mobile (Salone Satellite) en Milán, encargándome del montaje y la atención a compradores y prensa.</li>
+          </ul>
+          <div class="exp-more" id="btn-jks" onclick="toggleExp('jks')"><span class="exp-more-label">Ver más </span>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="exp-panel" id="panel-jks" style="max-height:0px;">
+            <ul class="exp-bullets exp-extra">
+              <li>Transformé fotografía de producto sin editar en imágenes pulidas y listas para impresión y web, para el portafolio y los materiales de marketing del estudio.</li>
+              <li>Reconstruí el archivo fotográfico de producto del estudio para el relanzamiento del sitio web, y produje campañas de Mailchimp, kits de prensa y documentos de precios.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">Sep 2021 — Ago 2023</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Consultor de Diseño y Ventas Internacionales</div>
+            <div class="exp-company">Piegatto Contemporary Design, Ciudad de Guatemala</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Convertí consultas en visitas a la sala de exhibición, relacionando las necesidades y el espacio de cada cliente con piezas, colores y telas específicas de nuestro catálogo, generalmente seguido de una visita a domicilio para confirmar medidas.</li>
+            <li>Lideré el diseño espacial e interior de más de 10 proyectos residenciales importantes, analizando el espacio a través de planos para la distribución, el color y la selección de materiales.</li>
+            <li>Trabajé con el equipo de producción interno de Piegatto en especificaciones a medida, traduciendo las solicitudes de tamaño y color de los clientes en los diseños de alta gama del estudio.</li>
+          </ul>
+          <div class="exp-more" id="btn-piegatto" onclick="toggleExp('piegatto')"><span class="exp-more-label">Ver más </span>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="exp-panel" id="panel-piegatto" style="max-height:0px;">
+            <ul class="exp-bullets exp-extra">
+              <li>Gestioné la logística de exportación de envíos de mobiliario a múltiples países, incluyendo Estados Unidos, Colombia, Venezuela, Panamá y República Dominicana.</li>
+              <li>Identifiqué e incorporé a un distribuidor internacional en República Dominicana para un pedido inicial de varios contenedores, asesorando en la selección de productos y colores según nuestros más vendidos y el nuevo mercado.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">Jun 2021 — Ago 2021</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Diseñador de Mobiliario y Asociado de Ventas</div>
+            <div class="exp-company">Tabla, Office Furniture SA, Ciudad de Guatemala</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Elaboré modelos acotados en SketchUp para proyectos de mobiliario a medida, traduciendo cada diseño en especificaciones de corte listas para CNC y detalles de ensamblaje para el equipo de producción.</li>
+            <li>Seleccioné materiales y acabados para cada pieza, laminados y calidades de tela para sillas de oficina, equilibrando durabilidad y presupuesto del cliente.</li>
+          </ul>
+          <div class="exp-more" id="btn-tabla" onclick="toggleExp('tabla')"><span class="exp-more-label">Ver más </span>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="exp-panel" id="panel-tabla" style="max-height:0px;">
+            <ul class="exp-bullets exp-extra">
+              <li>Trabajé directamente con el equipo de producción interno, revisando en persona el ajuste y las medidas antes de la instalación para detectar problemas antes de la entrega.</li>
+              <li>Realicé personalmente consultas y mediciones a domicilio con clientes, asesorando sobre materiales rentables adecuados al presupuesto y espacio de cada cliente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">May 2019 — May 2021</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Diseño de Interiores y Co-Gerente</div>
+            <div class="exp-company">Grupo Recinos (progresó por 3 puestos en la apertura de dos tiendas)</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p class="exp-intro">Progresé de consultor de diseño a co-gerente de una de las dos tiendas abiertas como parte de la expansión regional de la empresa.</p>
+          <div class="stage-track">
+
+            <div class="stage-item">
+              <div class="stage-head">
+                <div class="stage-title">Diseño de Interiores y Co-Gerente, segunda tienda regional</div>
+                <div class="stage-dates">Nov 2020 — May 2021</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Combiné la consultoría de diseño práctica con el liderazgo de equipo y la responsabilidad de metas de ventas como co-gerente de la segunda tienda.</li>
+                <li>Fui el punto de escalación del equipo para problemas de atención al cliente, resolviendo disputas directamente para proteger la relación con los clientes y la recompra.</li>
+              </ul>
+              <div class="exp-more" id="btn-stage1" onclick="toggleExp('stage1')"><span class="exp-more-label">Ver más </span>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="exp-panel" id="panel-stage1" style="max-height:0px;">
+                <ul class="exp-bullets exp-extra">
+                  <li>Gestioné las operaciones diarias de la segunda tienda junto a un pequeño equipo de diseño y ventas, dividiendo el tiempo entre consultas directas con clientes y la formación del equipo.</li>
+                  <li>Fui promovido a co-gerente de la segunda tienda después de que el enfoque de diseño y ventas demostrara resultados en la primera, extendiendo el mismo modelo a un nuevo mercado.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stage-item">
+              <div class="stage-head">
+                <div class="stage-title">Diseño de Interiores y Supervisor de Ventas, primera tienda regional</div>
+                <div class="stage-dates">Mar 2020 — Oct 2020</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Seleccionado como parte de un pequeño equipo de asesores de diseño y ventas elegidos para abrir la tienda, adaptando el enfoque de consultoría de diseño de la capital a un nuevo mercado local.</li>
+                <li>Lideré y capacité a un equipo de asesores de ventas y diseño, formándolos en evaluación de espacios y recomendaciones de mobiliario.</li>
+              </ul>
+              <div class="exp-more" id="btn-stage2" onclick="toggleExp('stage2')"><span class="exp-more-label">Ver más </span>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="exp-panel" id="panel-stage2" style="max-height:0px;">
+                <ul class="exp-bullets exp-extra">
+                  <li>Elegido para el puesto por combinar una sólida formación en diseño con tácticas de ventas ya probadas en la capital, el perfil exacto que Grupo Recinos buscaba para liderar la expansión al nuevo mercado.</li>
+                  <li>Asesoré personalmente a los clientes mediante mediciones y simulaciones a domicilio antes de la compra.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="stage-item">
+              <div class="stage-head">
+                <div class="stage-title">Asociado de Ventas y Consultor de Diseño de Interiores, Habitat</div>
+                <div class="stage-dates">May 2019 — Mar 2020</div>
+              </div>
+              <ul class="exp-bullets">
+                <li>Asesoré a clientes minoristas individuales en la selección de mobiliario, distribución y acabados, desde visitas a tienda hasta consultas completas a domicilio.</li>
+                <li>Gestioné el proceso de venta completo de forma independiente, identificando las necesidades del cliente, negociando el precio y cerrando la venta.</li>
+              </ul>
+              <div class="exp-more" id="btn-stage3" onclick="toggleExp('stage3')"><span class="exp-more-label">Ver más </span>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <div class="exp-panel" id="panel-stage3" style="max-height:0px;">
+                <ul class="exp-bullets exp-extra">
+                  <li>Evalué el espacio y el estilo de vida de cada cliente, el tamaño de la habitación, el hogar y las mascotas, antes de recomendar opciones de mobiliario.</li>
+                  <li>Asesoré sobre protección de telas, color y opciones de material (chapa de madera, madera maciza, tapicería) según el presupuesto de cada cliente.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">Dic 2018 — Abr 2019</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Consultor de Ventas y Diseño de Mobiliario de Oficina</div>
+            <div class="exp-company">Güino (Sistemas y Proyectos Guatemala)</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Vendí sillas, escritorios y estaciones de trabajo modulares a clientes empresariales, desde el contacto inicial hasta el cierre de la venta.</li>
+            <li>Realicé mediciones en sitio en las oficinas de los clientes para planificar la distribución y el ajuste del mobiliario.</li>
+          </ul>
+          <div class="exp-more" id="btn-guino" onclick="toggleExp('guino')"><span class="exp-more-label">Ver más </span>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="exp-panel" id="panel-guino" style="max-height:0px;">
+            <ul class="exp-bullets exp-extra">
+              <li>Utilicé el software de configuración 3D del proveedor para diseñar distribuciones con su línea de productos real, dando a los clientes una vista previa precisa antes de realizar el pedido.</li>
+              <li>Diseñé el acondicionamiento completo de una oficina (oficinas privadas, salas de reuniones) para un cliente como parte de una propuesta de venta más amplia, a partir de mediciones en sitio y el mismo proceso de configuración 3D.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-top">
+          <div class="exp-when">Ene 2017 — Nov 2018</div>
+          <div class="exp-titlewrap">
+            <div class="exp-title">Asociado de Ventas y Diseñador de Interiores Junior</div>
+            <div class="exp-company">Grupo Recinos, Habitat</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Asesoré a clientes minoristas individuales en la selección de mobiliario, distribución y acabados, comenzando con visitas a tienda y más adelante gestionando consultas completas a domicilio.</li>
+            <li>Aprendí los fundamentos de ventas en el puesto: identificar las necesidades del cliente, negociar el precio y cerrar la venta.</li>
+            <li>Comencé como asociado de ventas de nivel inicial, recibiendo formación en el puesto en diseño de interiores y avanzando hacia un rol de diseño junior dentro del equipo de la tienda.</li>
+          </ul>
+          <div class="exp-more" id="btn-habitatEarly" onclick="toggleExp('habitatEarly')"><span class="exp-more-label">Ver más </span>
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#B8823C" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="exp-panel" id="panel-habitatEarly" style="max-height:0px;">
+            <ul class="exp-bullets exp-extra">
+              <li>Utilicé mis primeros conocimientos de diseño para recomendar piezas complementarias que ayudaran a los clientes a completar un ambiente en lugar de comprar una sola pieza, mientras cumplía con metas de ventas semanales.</li>
+              <li>Me formé bajo la supervisión de personal de ventas senior al inicio del puesto, y luego comencé a llevar consultas con clientes de forma independiente a medida que crecía mi conocimiento de diseño y producto.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+  <!-- ===================== COURSES / VOLUNTEER / ENTREPRENEURSHIP (full width) ===================== -->
+  <div class="extra-section">
+
+    <div class="extra-group">
+      <div class="label" style="margin-bottom:4px;">Cursos</div>
+
+      <div class="extra-row">
+        <div class="extra-when">08/2022<br><span class="loc">Online, MX</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Introducción a Rhino 3D para Diseño Paramétrico</div>
+          </div>
+          <div class="extra-sub">Piegatto — Javier Gaxiola</div>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-when">04/2022<br><span class="loc">AGI, Offices, GTM</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Iluminación para Uso Residencial y Comercial</div>
+          </div>
+          <div class="extra-sub">AGI — Asociación Guatemalteca de Iluminación</div>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-when">06/2017<br><span class="loc">Edificio TEC, GTM</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Redes Sociales para tu Negocio</div>
+          </div>
+          <div class="extra-sub">Splash Academy — Tírate al Agua</div>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-when">03/2017<br><span class="loc">Edificio TEC, GTM</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Emprendimiento y Startups</div>
+          </div>
+          <div class="extra-sub">Splash Academy — Tírate al Agua</div>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-when">01/2015<br><span class="loc">Ciudad de Guatemala, GTM</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Dibujo Artístico</div>
+          </div>
+          <div class="extra-sub">Academia Ars Artis / Walter Peter</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="extra-group">
+      <div class="label" style="margin-bottom:4px;">Voluntariado</div>
+
+      <div class="extra-row">
+        <div class="extra-when">03/2024<br><span class="loc">Berlín, Alemania</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Festival Transmediale de Arte Digital y Cultura</div>
+          </div>
+          <div class="extra-sub"><a href="https://transmediale.de">transmediale.de</a></div>
+          <p class="extra-body">Como voluntario en el Festival Transmediale, colaboré con soporte de escenario y asistencia en instalaciones en uno de los festivales internacionales más importantes de arte y cultura digital.</p>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-when">2018<br><span class="loc">Quetzaltenango, Guatemala</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Consultoría de Diseño de Producto</div>
+          </div>
+          <div class="extra-sub">INDIS — Instituto de Investigación y Estudios Superiores de Arquitectura y Diseño<br>Fondo de Cooperación y Desarrollo Internacional — Misión de Taiwán en Guatemala<br>Gobierno de Guatemala — Ministerio de Economía</div>
+          <p class="extra-body">Asistí a un artesano local de la madera en Guatemala a través de la iniciativa de la Misión de Taiwán, optimizando la producción de camiones de juguete mediante el establecimiento de una línea de producción y diseños estandarizados, mejorando la eficiencia y las ventas en el mercado.</p>
+        </div>
+      </div>
+
+      <div class="extra-row">
+        <div class="extra-when">2015<br><span class="loc">Sacatepéquez, Guatemala</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Asistencia Técnica en Diseño de Producto</div>
+          </div>
+          <div class="extra-sub">INDIS — Instituto de Investigación y Estudios Superiores de Arquitectura y Diseño<br>Universidad Rafael Landívar<br>Gobierno de Guatemala — Ministerio de Economía</div>
+          <p class="extra-body">Como diseñadores, visitamos una comunidad cerca de la Ciudad de Guatemala con una cooperativa llamada Cosender. Ayudé a Elena, quien elaboraba mermeladas para mercados locales. Creé "Mermeladas Doña Elena," un proyecto de marca e identidad con fines comerciales.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="extra-group">
+      <div class="label" style="margin-bottom:4px;">Emprendimiento</div>
+
+      <div class="extra-row">
+        <div class="extra-when">2018 – 2021<br><span class="loc">Ciudad de Guatemala, Guatemala</span></div>
+        <div class="extra-main">
+          <div class="extra-top">
+            <div class="extra-title">Búho Gt. — Diseño y Fabricación de Butcher Blocks</div>
+          </div>
+          <div class="extra-sub">Emprendimiento personal</div>
+          <p class="extra-body">Este proyecto destaca las maderas preciosas de Guatemala a través de tablas de cortar tipo "butcher block," preferidas por chefs por su calidad y funcionalidad. Al mostrar la veta transversal de la madera, resalto su belleza y durabilidad mientras evito daños durante su uso.</p>
+          <div class="extra-contact">
+            <span><span class="k">Fb </span>@buho:_gt</span>
+            <span><span class="k">Ig </span><a href="https://instagram.com/buho.gt">@buho.gt</a></span>
+            <span><span class="k">Web </span><a href="https://buhoguate.wixsite.com/buhogt">buhoguate.wixsite.com/buhogt</a></span>
+            <span><span class="k">Correo </span><a href="mailto:buhoguate@gmail.com">buhoguate@gmail.com</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    </div>
+
+
+    <!-- RIGHT — reserved, ~1/5 -->
+    <div class="col-right"></div>
+
+  </div>
+
+  <!-- ===================== VISUAL CAREER TIMELINE (full width) ===================== -->
+  <div class="tl-section">
+    <div class="tl-head">
+      <div class="label">Línea de tiempo profesional</div>
+      <p class="tl-intro">Empleo, emprendimientos y formación, representados a escala según las fechas reales. Pasa el cursor sobre cualquier bloque para ver el puesto completo y las fechas.</p>
+    </div>
+
+    <div class="tl-chart">
+      <div class="tl-ruler-row">
+        <div class="tl-spacer"></div>
+        <div class="tl-ruler" id="tlRuler">
+          <div class="tick major" style="left:0.0000%"></div><div class="yr" style="left:0.0000%">2015</div>
+          <div class="tick" style="left:0.6944%"></div>
+          <div class="tick" style="left:1.3889%"></div>
+          <div class="tick" style="left:2.0833%"></div>
+          <div class="tick" style="left:2.7778%"></div>
+          <div class="tick" style="left:3.4722%"></div>
+          <div class="tick" style="left:4.1667%"></div>
+          <div class="tick" style="left:4.8611%"></div>
+          <div class="tick" style="left:5.5556%"></div>
+          <div class="tick" style="left:6.2500%"></div>
+          <div class="tick" style="left:6.9444%"></div>
+          <div class="tick" style="left:7.6389%"></div>
+          <div class="tick major" style="left:8.3333%"></div><div class="yr" style="left:8.3333%">2016</div>
+          <div class="tick" style="left:9.0278%"></div>
+          <div class="tick" style="left:9.7222%"></div>
+          <div class="tick" style="left:10.4167%"></div>
+          <div class="tick" style="left:11.1111%"></div>
+          <div class="tick" style="left:11.8056%"></div>
+          <div class="tick" style="left:12.5000%"></div>
+          <div class="tick" style="left:13.1944%"></div>
+          <div class="tick" style="left:13.8889%"></div>
+          <div class="tick" style="left:14.5833%"></div>
+          <div class="tick" style="left:15.2778%"></div>
+          <div class="tick" style="left:15.9722%"></div>
+          <div class="tick major" style="left:16.6667%"></div><div class="yr" style="left:16.6667%">2017</div>
+          <div class="tick" style="left:17.3611%"></div>
+          <div class="tick" style="left:18.0556%"></div>
+          <div class="tick" style="left:18.7500%"></div>
+          <div class="tick" style="left:19.4444%"></div>
+          <div class="tick" style="left:20.1389%"></div>
+          <div class="tick" style="left:20.8333%"></div>
+          <div class="tick" style="left:21.5278%"></div>
+          <div class="tick" style="left:22.2222%"></div>
+          <div class="tick" style="left:22.9167%"></div>
+          <div class="tick" style="left:23.6111%"></div>
+          <div class="tick" style="left:24.3056%"></div>
+          <div class="tick major" style="left:25.0000%"></div><div class="yr" style="left:25.0000%">2018</div>
+          <div class="tick" style="left:25.6944%"></div>
+          <div class="tick" style="left:26.3889%"></div>
+          <div class="tick" style="left:27.0833%"></div>
+          <div class="tick" style="left:27.7778%"></div>
+          <div class="tick" style="left:28.4722%"></div>
+          <div class="tick" style="left:29.1667%"></div>
+          <div class="tick" style="left:29.8611%"></div>
+          <div class="tick" style="left:30.5556%"></div>
+          <div class="tick" style="left:31.2500%"></div>
+          <div class="tick" style="left:31.9444%"></div>
+          <div class="tick" style="left:32.6389%"></div>
+          <div class="tick major" style="left:33.3333%"></div><div class="yr" style="left:33.3333%">2019</div>
+          <div class="tick" style="left:34.0278%"></div>
+          <div class="tick" style="left:34.7222%"></div>
+          <div class="tick" style="left:35.4167%"></div>
+          <div class="tick" style="left:36.1111%"></div>
+          <div class="tick" style="left:36.8056%"></div>
+          <div class="tick" style="left:37.5000%"></div>
+          <div class="tick" style="left:38.1944%"></div>
+          <div class="tick" style="left:38.8889%"></div>
+          <div class="tick" style="left:39.5833%"></div>
+          <div class="tick" style="left:40.2778%"></div>
+          <div class="tick" style="left:40.9722%"></div>
+          <div class="tick major" style="left:41.6667%"></div><div class="yr" style="left:41.6667%">2020</div>
+          <div class="tick" style="left:42.3611%"></div>
+          <div class="tick" style="left:43.0556%"></div>
+          <div class="tick" style="left:43.7500%"></div>
+          <div class="tick" style="left:44.4444%"></div>
+          <div class="tick" style="left:45.1389%"></div>
+          <div class="tick" style="left:45.8333%"></div>
+          <div class="tick" style="left:46.5278%"></div>
+          <div class="tick" style="left:47.2222%"></div>
+          <div class="tick" style="left:47.9167%"></div>
+          <div class="tick" style="left:48.6111%"></div>
+          <div class="tick" style="left:49.3056%"></div>
+          <div class="tick major" style="left:50.0000%"></div><div class="yr" style="left:50.0000%">2021</div>
+          <div class="tick" style="left:50.6944%"></div>
+          <div class="tick" style="left:51.3889%"></div>
+          <div class="tick" style="left:52.0833%"></div>
+          <div class="tick" style="left:52.7778%"></div>
+          <div class="tick" style="left:53.4722%"></div>
+          <div class="tick" style="left:54.1667%"></div>
+          <div class="tick" style="left:54.8611%"></div>
+          <div class="tick" style="left:55.5556%"></div>
+          <div class="tick" style="left:56.2500%"></div>
+          <div class="tick" style="left:56.9444%"></div>
+          <div class="tick" style="left:57.6389%"></div>
+          <div class="tick major" style="left:58.3333%"></div><div class="yr" style="left:58.3333%">2022</div>
+          <div class="tick" style="left:59.0278%"></div>
+          <div class="tick" style="left:59.7222%"></div>
+          <div class="tick" style="left:60.4167%"></div>
+          <div class="tick" style="left:61.1111%"></div>
+          <div class="tick" style="left:61.8056%"></div>
+          <div class="tick" style="left:62.5000%"></div>
+          <div class="tick" style="left:63.1944%"></div>
+          <div class="tick" style="left:63.8889%"></div>
+          <div class="tick" style="left:64.5833%"></div>
+          <div class="tick" style="left:65.2778%"></div>
+          <div class="tick" style="left:65.9722%"></div>
+          <div class="tick major" style="left:66.6667%"></div><div class="yr" style="left:66.6667%">2023</div>
+          <div class="tick" style="left:67.3611%"></div>
+          <div class="tick" style="left:68.0556%"></div>
+          <div class="tick" style="left:68.7500%"></div>
+          <div class="tick" style="left:69.4444%"></div>
+          <div class="tick" style="left:70.1389%"></div>
+          <div class="tick" style="left:70.8333%"></div>
+          <div class="tick" style="left:71.5278%"></div>
+          <div class="tick" style="left:72.2222%"></div>
+          <div class="tick" style="left:72.9167%"></div>
+          <div class="tick" style="left:73.6111%"></div>
+          <div class="tick" style="left:74.3056%"></div>
+          <div class="tick major" style="left:75.0000%"></div><div class="yr" style="left:75.0000%">2024</div>
+          <div class="tick" style="left:75.6944%"></div>
+          <div class="tick" style="left:76.3889%"></div>
+          <div class="tick" style="left:77.0833%"></div>
+          <div class="tick" style="left:77.7778%"></div>
+          <div class="tick" style="left:78.4722%"></div>
+          <div class="tick" style="left:79.1667%"></div>
+          <div class="tick" style="left:79.8611%"></div>
+          <div class="tick" style="left:80.5556%"></div>
+          <div class="tick" style="left:81.2500%"></div>
+          <div class="tick" style="left:81.9444%"></div>
+          <div class="tick" style="left:82.6389%"></div>
+          <div class="tick major" style="left:83.3333%"></div><div class="yr" style="left:83.3333%">2025</div>
+          <div class="tick" style="left:84.0278%"></div>
+          <div class="tick" style="left:84.7222%"></div>
+          <div class="tick" style="left:85.4167%"></div>
+          <div class="tick" style="left:86.1111%"></div>
+          <div class="tick" style="left:86.8056%"></div>
+          <div class="tick" style="left:87.5000%"></div>
+          <div class="tick" style="left:88.1944%"></div>
+          <div class="tick" style="left:88.8889%"></div>
+          <div class="tick" style="left:89.5833%"></div>
+          <div class="tick" style="left:90.2778%"></div>
+          <div class="tick" style="left:90.9722%"></div>
+          <div class="tick major" style="left:91.6667%"></div><div class="yr" style="left:91.6667%">2026</div>
+          <div class="tick" style="left:92.3611%"></div>
+          <div class="tick" style="left:93.0556%"></div>
+          <div class="tick" style="left:93.7500%"></div>
+          <div class="tick" style="left:94.4444%"></div>
+          <div class="tick" style="left:95.1389%"></div>
+          <div class="tick" style="left:95.8333%"></div>
+          <div class="tick" style="left:96.5278%"></div>
+          <div class="tick" style="left:97.2222%"></div>
+          <div class="tick" style="left:97.9167%"></div>
+          <div class="tick" style="left:98.6111%"></div>
+          <div class="tick" style="left:99.3056%"></div>
+        </div>
+      </div>
+
+      <div class="tl-body" id="tlBody">
+        <div class="tl-today" style="left:calc(150px + (100% - 150px) * 0.9722)">
+          <span class="tl-today-label">HOY, SEP 2026</span>
+        </div>
+
+        <div class="tl-lane">
+          <div class="tl-lane-label">Empleo</div>
+          <div class="tl-track">
+            <div class="tl-bar employment" style="left:16.67%;width:15.97%;" title="Asociado de Ventas y Diseñador de Interiores Junior — Grupo Recinos, Habitat — Ene 2017 – Nov 2018">Habitat</div>
+            <div class="tl-bar employment" style="left:32.64%;width:3.47%;" title="Consultor de Ventas y Diseño de Mobiliario de Oficina — Güino — Dic 2018 – Abr 2019"></div>
+            <div class="tl-bar employment" style="left:36.11%;width:17.36%;" title="Diseño de Interiores y Co-Gerente — Grupo Recinos — May 2019 – May 2021">Grupo Recinos</div>
+            <div class="tl-bar employment" style="left:53.47%;width:2.08%;" title="Diseñador de Mobiliario y Asociado de Ventas — Tabla, Office Furniture SA — Jun 2021 – Ago 2021"></div>
+            <div class="tl-bar employment" style="left:55.56%;width:16.67%;" title="Consultor de Diseño y Ventas Internacionales — Piegatto Contemporary Design — Sep 2021 – Ago 2023">Piegatto</div>
+            <div class="tl-bar employment" style="left:81.25%;width:9.72%;font-size:10px;" title="Asistente de Estudio — Jiri Krejcirik Studio — Oct 2024 – Nov 2025">JK Studio</div>
+            <div class="tl-bar employment present" style="left:90.97%;width:9.03%;font-size:10px;" title="Diseño de Interiores y Visualizador 3D — The Miners (Coffee Giants a.s.) — Dic 2025 – presente">The Miners</div>
+          </div>
+        </div>
+
+        <div class="tl-lane">
+          <div class="tl-lane-label">Emprendimientos y<br>proyectos principales</div>
+          <div class="tl-track">
+            <div class="tl-bar venture" style="left:13.19%;width:22.22%;" title="Búho GT — Fundador — Ago 2016 – Mar 2019">Búho GT</div>
+            <div class="tl-bar venture" style="left:46.53%;width:9.03%;font-size:10px;" title="Divus Dea — Proyecto de Tesis de Licenciatura (85/100) — Ago 2020 – Ago 2021">Divus Dea</div>
+            <div class="tl-bar venture" style="left:83.33%;width:4.86%;font-size:9px;padding:0 2px;" title="Forma — Proyecto Final de Maestría (85/100) — Ene 2025 – Jul 2025">Forma</div>
+          </div>
+        </div>
+
+        <div class="tl-lane">
+          <div class="tl-lane-label">Formación</div>
+          <div class="tl-track">
+            <div class="tl-bar edu" style="left:0%;width:56.94%;">Licenciatura, Diseño Industrial</div>
+            <div class="tl-bar edu" style="left:72.22%;width:15.97%;">Maestría, Future Design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-legend">
+      <div class="tl-legend-item"><span class="tl-swatch" style="background:#B8823C;"></span>Empleo</div>
+      <div class="tl-legend-item"><span class="tl-swatch" style="background:#5E7A5C;"></span>Emprendimientos y proyectos principales</div>
+      <div class="tl-legend-item"><span class="tl-swatch" style="background:#3F6C87;"></span>Formación</div>
+    </div>
+  </div>
+
+  <div style="flex:1;"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · LinkedIn: @franciscocruz90 · Praga, Chequia</span>
+  </div>
+
+</div>
+
+<script>
+function toggleExp(key){
+  var btn = document.getElementById('btn-' + key);
+  var panel = document.getElementById('panel-' + key);
+  var label = btn.querySelector('.exp-more-label');
+  var isOpen = btn.classList.contains('open');
+  if (isOpen) {
+    btn.classList.remove('open');
+    label.textContent = 'Ver más ';
+    panel.style.maxHeight = '0px';
+  } else {
+    btn.classList.add('open');
+    label.textContent = 'Ver menos ';
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+  }
+}
+(function(){
+  var wrap = document.getElementById('cvDlWrap');
+  var btn = document.getElementById('cvDlBtn');
+  if (!wrap || !btn) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    wrap.classList.toggle('open');
+  });
+  document.addEventListener('click', function(){ wrap.classList.remove('open'); });
+  wrap.querySelector('.dl-menu').addEventListener('click', function(e){ e.stopPropagation(); });
+})();
+</script>
+</body>
+</html>

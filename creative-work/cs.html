@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Kreativní projekty — Francisco Cruz</title>
+<meta name="description" content="Osobní práce mimo zakázky pro klienty nebo školní zadání: typografické systémy postavené od nuly, ruční truhlářská práce a kresby tužkou.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" hreflang="en" href="en.html">
+<link rel="alternate" hreflang="es" href="es.html">
+<link rel="alternate" hreflang="cs" href="cs.html">
+<link rel="alternate" hreflang="x-default" href="en.html">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+* { box-sizing: border-box; }
+body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+a { color:#B8823C; text-decoration:none; }
+.eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+.navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+.navlabel a { color:#6B6B66; }
+.navlabel a:hover { color:#1A1A1A; }
+.label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+.tag { display:inline-flex; align-items:center; padding:5px 12px; border-radius:100px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; background:#E8ECE7; color:#4F6355; }
+
+.proj-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:56px 40px; padding:8px 64px 100px; max-width:1160px; margin:0 auto; }
+.langsw { display:flex; gap:8px; align-items:center; padding-left:24px; border-left:1px solid #E5E2DA; }
+.langsw .cur { color:#1A1A1A; font-weight:600; }
+.langsw .sep { color:#D8D3C6; }
+.proj-card { display:flex; flex-direction:column; text-decoration:none; color:inherit; }
+.proj-img { position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:3px; background:#EFE9DD; box-shadow:0 12px 30px rgba(26,26,26,0.08); }
+.proj-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.proj-card:hover .proj-img img { transform:scale(1.045); }
+.proj-view { position:absolute; left:16px; bottom:16px; z-index:2; display:flex; align-items:center; gap:7px; font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:#FAFAF8; background:rgba(26,26,26,0.55); backdrop-filter:blur(2px); padding:8px 14px; border-radius:100px; opacity:0; transform:translateY(6px); transition:all .25s ease; }
+.proj-card:hover .proj-view { opacity:1; transform:translateY(0); }
+.proj-view svg { flex-shrink:0; transition:transform .25s ease; }
+.proj-card:hover .proj-view svg { transform:translateX(2px); }
+.proj-info { padding-top:20px; }
+.proj-title { font-size:22px; font-weight:400; margin:12px 0 8px; color:#1A1A1A; }
+.proj-desc { font-size:13.5px; color:#6B6B66; font-weight:300; line-height:1.65; margin:0; max-width:360px; }
+
+@media (max-width: 700px) {
+  .proj-grid { grid-template-columns:1fr; gap:44px; padding-left:24px; padding-right:24px; }
+}
+@media (max-width: 780px) {
+  .intro-block { padding-left:24px; padding-right:24px; }
+}
+.cs-disclaimer { max-width:680px; padding:18px 22px; background:#F5F2EA; border:1px solid #E5E2DA; border-radius:4px; font-size:12.5px; color:#6B6B66; font-weight:300; line-height:1.6; font-style:italic; }
+</style>
+
+</head>
+<body>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../index-cs.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <a href="../professional-work/cs.html">Profesionální práce</a>
+      <span style="color:#1A1A1A;">Kreativní projekty</span>
+      <a href="../about-me/about-cs.html">O mně</a>
+      <a href="../contact-cs.html">Kontakt</a>
+      <div class="langsw">
+        <a href="en.html">EN</a><span class="sep">/</span><a href="es.html">ES</a><span class="sep">/</span><a class="cur" href="cs.html">CS</a>
+      </div>
+    </div>
+  </div><div class="intro-block" style="padding:56px 64px 8px;max-width:760px;">
+    <span class="eyebrow">Vybraná práce</span>
+    <h1 style="font-weight:300;font-size:46px;line-height:1.15;margin:16px 0 14px;">Kreativní projekty</h1>
+    <p style="font-size:16px;font-weight:300;color:#6B6B66;line-height:1.6;margin:0;">Osobní práce mimo zakázky pro klienty nebo školní zadání: typografické systémy postavené od nuly, ruční truhlářská práce a kresby tužkou.</p>
+  </div>
+
+  <div style="padding:48px 64px 0;">
+    <div style="height:1px;background:#E5E2DA;"></div>
+  </div>
+
+  <div class="proj-grid">
+
+    <a class="proj-card" href="pattern-typography/cs.html">
+      <div class="proj-img">
+        <img src="pattern-hero.jpg" alt="Ručně psaná titulní strana z Franciscova skicáku s názvem Decoding Latin Alphabet Anatomy" loading="lazy">
+        <div class="proj-view">Zobrazit projekt<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+      <div class="proj-info">
+        <h3 class="proj-title">Pattern Typography</h3>
+        <p class="proj-desc">Kreativní studie rozkládající a znovu skládající anatomii latinky, proměňující známá písmena v abstraktní geometrický vzor.</p>
+      </div>
+    </a>
+
+    <a class="proj-card" href="handmade-typography/cs.html">
+      <div class="proj-img">
+        <img src="handmade-hero.jpg" alt="Ukázka Franciscova rukopisu převedená do digitálního písma" loading="lazy">
+        <div class="proj-view">Zobrazit projekt<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+      <div class="proj-info">
+        <h3 class="proj-title">Handmade Typography</h3>
+        <p class="proj-desc">Vlastní písmo vytvořené z mého rukopisu, digitalizované písmeno po písmenu, které dodává digitálním projektům, poznámkám a skicám rukodělný nádech.</p>
+      </div>
+    </a>
+
+    <a class="proj-card" href="chessboard/cs.html">
+      <div class="proj-img">
+        <img src="chessboard-hero.jpg" alt="Ruka přesouvající šachovou figurku na dokončené dřevěné šachovnici uprostřed partie" loading="lazy">
+        <div class="proj-view">Zobrazit projekt<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+      <div class="proj-info">
+        <h3 class="proj-title">Chessboard</h3>
+        <p class="proj-desc">Stejně tak centrální kus na konferenční stolek jako šachová souprava, kde má každý kámen svůj vlastní řez a celá sada se skládá do vlastního úložného boxu.</p>
+      </div>
+    </a>
+
+    <a class="proj-card" href="artistic-drawings/cs.html">
+      <div class="proj-img">
+        <img src="artistic-drawings/artistic-hero.jpg" alt="Kresba tužkou borovicové šišky, kreslená šupinu po šupině podle skutečnosti" loading="lazy">
+        <div class="proj-view">Zobrazit projekt<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+      <div class="proj-info">
+        <h3 class="proj-title">Umělecké kresby</h3>
+        <p class="proj-desc">Série kreseb tužkou zaměřených na strukturu a linii: ruce, přírodní formy a každodenní předměty, kreslené podle skutečnosti.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <div style="padding:32px 64px 0;">
+    <div class="cs-disclaimer">Rád bych s vámi komunikoval česky. Češtinu se zatím učím, a proto jsem při přípravě tohoto dokumentu využil online překladač. Předem se omlouvám za případné jazykové nepřesnosti a děkuji za pochopení.</div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · LinkedIn: @franciscocruz90 · Praha, Česko</span>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tejido Guatemalteco Contemporáneo — Francisco Cruz</title>
+<meta name="description" content="Tejido Guatemalteco Contemporáneo: la traducción de una pintura a una pieza real de tejido de cintura guatemalteco, y Threadly, un concepto de negocio para conectar a tejedoras artesanas con diseñadores contemporáneos.">
+<link rel="alternate" hreflang="en" href="guatemala-en.html">
+<link rel="alternate" hreflang="es" href="guatemala-es.html">
+<link rel="alternate" hreflang="cs" href="guatemala-cs.html">
+<link rel="alternate" hreflang="x-default" href="guatemala-en.html">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+    a { color:#B8823C; text-decoration:none; }
+    .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+    .navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+    .label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+    .tag { display:inline-flex; align-items:center; padding:5px 12px; border-radius:100px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; background:#F3E4DE; color:#9C4A32; }
+    .stat { display:flex; flex-direction:column; gap:4px; }
+    .stat b { font-size:19px; font-weight:500; }
+    .stat span { font-size:11.5px; color:#6B6B66; font-weight:300; }
+
+    .imgph { background:#EFE9DD; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; border-radius:2px; text-align:center; padding:16px; }
+    .imgph-cap { font-size:12px; color:#8b857a; font-weight:400; letter-spacing:0.01em; max-width:340px; line-height:1.5; }
+    .imgph.real { padding:0; overflow:hidden; position:relative; background:#1A1A1A; }
+    .imgph.real img { width:100%; height:100%; object-fit:cover; display:block; }
+    .imgph.real .imgph-cap { position:absolute; left:0; right:0; bottom:0; margin:0; max-width:none; background:linear-gradient(0deg,rgba(0,0,0,0.6),transparent); color:#fff; padding:18px 14px 8px; text-align:left; font-size:11px; }
+    .imgph.contain { background:#F3E4DE; padding:32px; }
+    .imgph.contain img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+
+    .coverflow { position:relative; margin:8px 64px 0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .coverflow-stage { position:relative; width:100%; height:100%; }
+    .cover-item { position:absolute; top:50%; left:50%; border-radius:3px; overflow:hidden; background:#1A1A1A; box-shadow:0 18px 40px rgba(0,0,0,0.28); transition:transform .35s ease, opacity .35s ease; cursor:pointer; }
+    .cover-item img { width:100%; height:100%; object-fit:cover; display:block; }
+    .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; background:#FAFAF8; border:1px solid #E0DACB; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:5; }
+    .carousel-arrow.prev { left:14px; }
+    .carousel-arrow.next { right:14px; }
+    .carousel-dots { display:flex; gap:6px; justify-content:center; margin-top:14px; }
+    .carousel-dot { width:6px; height:6px; border-radius:50%; background:#D8D2C4; cursor:pointer; }
+    .carousel-dot.active { background:#9C4A32; }
+
+    .palette-row { display:flex; gap:15px; flex-wrap:wrap; }
+    .palette-chip { display:flex; flex-direction:column; gap:8px; align-items:center; }
+    .palette-swatch { width:78px; height:78px; border-radius:50%; border:1px solid rgba(0,0,0,0.08); }
+    .palette-hex { font-size:11px; color:#8b857a; font-weight:300; letter-spacing:0.02em; }
+
+    .sec { display:flex; gap:64px; padding:56px 64px 8px; }
+    .sec-label { width:220px; flex-shrink:0; }
+    .sec-body { max-width:680px; }
+    .sec-body p { font-size:15.5px; font-weight:300; line-height:1.75; margin:0 0 18px; color:#2c2c29; }
+    .sec-body p:last-child { margin-bottom:0; }
+    .flag { font-size:13px; font-weight:400; color:#9c7a3c; background:#F5EDDC; border-radius:2px; padding:10px 14px; margin:0 0 18px; line-height:1.6; }
+
+    .stat-tile { background:#F5F2EA; border-radius:2px; padding:16px 18px; display:flex; flex-direction:column; gap:5px; }
+    .stat-tile b { font-size:20px; font-weight:500; color:#1A1A1A; }
+    .stat-tile span { font-size:11px; color:#8b857a; font-weight:300; line-height:1.4; }
+
+    .approach-card { display:flex; flex-direction:column; gap:10px; }
+    .approach-card .imgph { height:120px; }
+    .approach-card h4 { font-size:14px; font-weight:500; margin:0; }
+    .approach-card .loc { font-size:11px; color:#9C9890; font-weight:300; }
+    .approach-card p { font-size:12.5px; font-weight:300; color:#5c584f; line-height:1.55; margin:0; }
+
+    .approach-text { display:flex; flex-direction:column; gap:6px; padding:18px 0; border-top:1px solid #E5E2DA; }
+    .approach-text h4 { font-size:14px; font-weight:500; margin:0; }
+    .approach-text .loc { font-size:11px; color:#9C9890; font-weight:300; }
+    .approach-text p { font-size:12.5px; font-weight:300; color:#5c584f; line-height:1.55; margin:0; }
+
+    .pillar { display:flex; flex-direction:column; gap:8px; padding:20px; background:#F5F2EA; border-radius:2px; }
+    .pillar .num { font-size:10px; color:#9C4A32; font-weight:600; letter-spacing:0.06em; }
+    .pillar h4 { font-size:15px; font-weight:500; margin:0; }
+    .pillar p { font-size:13px; font-weight:300; color:#5c584f; line-height:1.6; margin:0; }
+
+    .film-row { display:flex; gap:16px; overflow-x:auto; padding-bottom:4px; }
+    .film-item { flex:none; width:248px; display:flex; flex-direction:column; gap:8px; }
+    .film-item .imgph { height:1040px; padding:0; }
+    .film-item .imgph-cap { font-size:10.5px; max-width:170px; }
+    .film-num { font-family:'Poppins',sans-serif; font-size:10px; color:#9C4A32; font-weight:600; letter-spacing:0.05em; }
+
+    .page { max-width:1440px; margin:0 auto; display:flex; flex-direction:column; zoom:0.75; }
+    .langsw { display:flex; gap:8px; align-items:center; padding-left:24px; border-left:1px solid #E5E2DA; }
+    .langsw .cur { color:#1A1A1A; font-weight:600; }
+    .langsw .sep { color:#D8D3C6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../../index-es.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <span style="color:#1A1A1A;">Trabajo Profesional</span>
+      <a href="../../creative-work/es.html">Exploraciones Creativas</a>
+      <a href="../../about-me/about-es.html">Sobre Mí</a>
+      <a href="../../contact-es.html">Contacto</a>
+      <div class="langsw">
+        <a href="guatemala-en.html">EN</a><span class="sep">/</span><a class="cur" href="guatemala-es.html">ES</a><span class="sep">/</span><a href="guatemala-cs.html">CS</a>
+      </div>
+    </div>
+  </div><div style="display:flex;justify-content:space-between;padding:18px 64px 0;">
+    <a class="eyebrow" href="../es.html">← Volver a Trabajo Profesional</a><span class="eyebrow" style="color:#9C9890;">Proyecto 4 de 6</span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="padding:52px 64px 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
+    <div style="max-width:760px;">
+      <span class="tag">Práctica de Maestría, 2024</span>
+      <h1 style="font-weight:300;font-size:46px;line-height:1.15;margin:16px 0 14px;">Tejido Guatemalteco Contemporáneo</h1>
+      <p style="font-size:16px;font-weight:300;color:#6B6B66;line-height:1.6;margin:0;">La traducción de una pintura a una pieza real de tejido de cintura guatemalteco, y un concepto de negocio construido para conectar a artesanos tradicionales con diseñadores contemporáneos.</p>
+    </div>
+    <div style="display:flex;gap:36px;padding-bottom:6px;">
+      <div class="stat"><b>Diseñador e Investigador</b><span>Rol</span></div>
+      <div class="stat"><b>2024</b><span>Maestría en Future Design, Prague City University</span></div>
+      <div class="stat"><b>1 prototipo</b><span>y un concepto de negocio completo, "Threadly"</span></div>
+    </div>
+  </div>
+
+  <div class="imgph real" style="margin:8px 64px 0;height:560px;">
+    <img src="gw-images/gw-hero.jpg" alt="The painting translating into a woven mosaic, left to right">
+  </div>
+
+  <!-- ============ 01 THE CRAFT ============ -->
+  <div class="sec" style="padding-top:76px;">
+    <div class="sec-label"><div class="label">01 &nbsp; El Oficio</div></div>
+    <div class="sec-body">
+      <p>Los textiles guatemaltecos como el huipil y el tzute se tejen en un telar de cintura: un sistema portátil con un extremo atado a un punto fijo y el otro alrededor de la cintura de la tejedora, de modo que ella controla la tensión con su propio cuerpo en lugar de un marco fijo. Es una técnica que se transmite directamente, de mujer a mujer, y así es como se sigue haciendo la mayor parte hoy en día.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;">
+    <div class="stat-tile"><b>60–120 días</b><span>Tiempo estimado de producción por pieza</span></div>
+    <div class="stat-tile"><b>70% mujeres</b><span>De la comunidad tejedora</span></div>
+    <div class="stat-tile"><b>120 huipiles</b><span>Estilos regionales documentados</span></div>
+    <div class="stat-tile"><b>Hasta 50 colores</b><span>Por huipil</span></div>
+    <div class="stat-tile"><b>$100–$1,000</b><span>Costo por huipil, según la complejidad</span></div>
+    <div class="stat-tile"><b>+100 ONGs</b><span>Y comunidades involucradas en toda Guatemala</span></div>
+  </div>
+
+  <div style="margin:24px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div class="imgph real" style="height:420px;">
+      <img src="gw-images/gw-craft-textile.jpg" alt="Un tejido en proceso en el telar de cintura">
+      <span class="imgph-cap">Una pieza en proceso en el telar, la trama se trabaja hilera por hilera</span>
+    </div>
+    <div class="imgph real" style="height:420px;">
+      <img src="gw-images/gw-craft-weaver.jpg" alt="Dos mujeres con huipiles tradicionales">
+      <span class="imgph-cap">Huipiles que se usan hoy, el trabajo de patrones y color que mantiene viva la tradición</span>
+    </div>
+  </div>
+
+  <!-- ============ 02 THE PROBLEM ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">02 &nbsp; El Problema</div></div>
+    <div class="sec-body">
+      <p>Cada vez menos personas aprenden a tejer. Las generaciones más jóvenes optan por jeans y camisetas en lugar de huipiles, y los patrones tradicionales se van perdiendo bajo la presión de la moda de consumo masivo. Tampoco ha habido mucho espacio para que el oficio innove en sus propios términos, lo que sigue reduciendo su mercado en lugar de hacerlo crecer. La mayoría de las tejedoras solo llegan al mercado local y a los turistas, sin un camino real hacia uno internacional.</p>
+    </div>
+  </div>
+
+  <!-- ============ 03 EXISTING APPROACHES ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">03 &nbsp; Enfoques Existentes</div></div>
+    <div class="sec-body">
+      <p>Ya existen algunas marcas haciendo algo parecido en otros lugares, y vale la pena conocerlas antes de construir algo nuevo. Jan Kath es el modelo más cercano: un estudio alemán que manda a hacer alfombras anudadas a mano en Nepal y Pakistán, por personas que llevan generaciones haciendo alfombras tradicionales, pero diseña patrones contemporáneos para que las hagan, cosas como sus diseños de nubes y cielo, en lugar de solo motivos tradicionales. Es la misma idea que busco: la calidad y el oficio de una técnica tradicional, combinados con un lenguaje de diseño realmente actual.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;">
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;">
+      <div class="imgph real" style="height:475px;"><img src="gw-images/gw-jankath-1.jpg" alt="Alfombra de Jan Kath, diseño de nubes y cielo"></div>
+      <div class="imgph real" style="height:475px;"><img src="gw-images/gw-jankath-2.jpg" alt="Alfombra de Jan Kath, detalle del patrón de nubes"></div>
+      <div class="imgph real" style="height:475px;"><img src="gw-images/gw-jankath-3.jpg" alt="Alfombra de Jan Kath, patrón floral"></div>
+    </div>
+    <div style="margin-top:12px;"><h4 style="font-size:14px;font-weight:500;margin:0 0 2px;">Jan Kath</h4><div class="loc">Bochum, Alemania</div></div>
+  </div>
+
+  <div style="margin:20px 64px 0;display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;">
+    <div class="approach-text">
+      <h4>Sabahar</h4>
+      <div class="loc">Adís Abeba, Etiopía</div>
+      <p>Textiles tejidos a mano de alta calidad, enfocados en fibras naturales y prácticas sostenibles.</p>
+    </div>
+    <div class="approach-text">
+      <h4>Mdingi</h4>
+      <div class="loc">Ciudad del Cabo, Sudáfrica</div>
+      <p>Marca de moda ética y sostenible construida sobre prendas hechas a mano.</p>
+    </div>
+    <div class="approach-text">
+      <h4>Gone Rural</h4>
+      <div class="loc">Suazilandia</div>
+      <p>Mujeres rurales que tejen accesorios para el hogar con materiales naturales.</p>
+    </div>
+  </div>
+
+  <!-- ============ 04 THE CONCEPT: THREADLY ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">04 &nbsp; El Concepto: Threadly</div></div>
+    <div class="sec-body">
+      <p>La idea que construí alrededor de esto es Threadly, "hilos atemporales": una marca que conecta directamente a las tejedoras tradicionales guatemaltecas con diseñadores contemporáneos, en lugar de dejar que cada lado trabaje por su cuenta. Los diseñadores acceden a una técnica real y una textura que no se puede falsificar digitalmente; las tejedoras consiguen trabajo más estable y un pago justo, en lugar de depender solo del turismo.</p>
+      <p>El plan se apoya en Cojolya, una cooperativa real de comercio justo de tejedoras mayas con sede en Santiago Atitlán, como fuente de artesanas calificadas, aunque nunca se llegó a establecer una alianza real; esto se quedó en la etapa de concepto.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;">
+    <div class="pillar">
+      <div class="num">PILAR 01</div>
+      <h4>Preservación Cultural</h4>
+      <p>Mantener vivas las técnicas tradicionales de tejido, con artesanas pagadas justamente por ello.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">PILAR 02</div>
+      <h4>Innovación</h4>
+      <p>Diseño moderno y herramientas digitales aplicadas a una técnica tradicional, sin reemplazarla.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">PILAR 03</div>
+      <h4>Prácticas Éticas y Sostenibles</h4>
+      <p>Principios de comercio justo y materiales ecológicos incorporados desde el inicio.</p>
+    </div>
+  </div>
+
+  <div style="margin:20px 64px 0;">
+    <div class="imgph contain" style="height:400px;background:#D4E2D5;">
+      <img src="gw-images/gw-threadly-logo.png" alt="Logotipo y nombre de marca de Threadly">
+    </div>
+  </div>
+
+  <!-- ============ 05 THE PROCESS: PAINTING TO TEXTILE ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">05 &nbsp; El Proceso: De la Pintura al Textil</div></div>
+    <div class="sec-body">
+      <p>La prueba de concepto más clara que construí fue traducir una pintura real a una pieza tejida, trabajando con las limitaciones reales del tejido de cintura en lugar de solo describirlas en papel. La obra de origen fue "Contratulations, you are alive." de Raynar Rogers, una pieza abstracta vibrante en azul y amarillo que, para mí, se lee como el caos de la vida cotidiana.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
+    <div class="imgph real" style="height:777px;">
+      <img src="gw-images/gw-painting.jpg" alt="La pintura original, Contratulations, you are alive, de Raynar Rogers" style="object-fit:contain;">
+      <span class="imgph-cap">La pintura original</span>
+    </div>
+    <div class="imgph real" style="height:777px;">
+      <img src="gw-images/gw-selection-vector.jpg" alt="La pintura con la franja elegida marcada en rojo" style="object-fit:contain;">
+      <span class="imgph-cap">La única franja seleccionada para tejer</span>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:32px;">
+    <div class="sec-label"></div>
+    <div class="sec-body">
+      <p>En realidad solo se podía tejer una franja angosta de la pintura, no la obra completa: el corte tiene ese ancho por límites físicos reales, el ancho del textil en sí y la cantidad de hilos que el telar realmente podía sostener.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0 0 64px;">
+    <div class="film-row" style="padding-right:64px;">
+      <div class="film-item">
+        <div class="film-num">01 FOTOGRAFÍA</div>
+        <div class="imgph real"><img src="gw-images/gw-process-1-photography.jpg" alt="La sección elegida, fotografiada"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">02 VECTORIZACIÓN</div>
+        <div class="imgph real"><img src="gw-images/gw-process-2-vectorization.jpg" alt="La sección vectorizada para guiar a las artesanas"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">03 CREACIÓN DEL MOSAICO</div>
+        <div class="imgph real"><img src="gw-images/gw-process-3-mosaic.jpg" alt="Descompuesta en un mosaico de color, alineado al conteo de hilos"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">04 CAPAS DE COLOR</div>
+        <div class="imgph real"><img src="gw-images/gw-process-4-colorlayering.jpg" alt="Pasada de alto contraste que aísla 8 grupos de color"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">05 RECOLORACIÓN</div>
+        <div class="imgph real"><img src="gw-images/gw-process-5-recoloring.jpg" alt="Recoloreada de vuelta a la paleta real de 8 colores de la obra"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:28px;padding-bottom:0;">
+    <div class="sec-label"></div>
+    <div class="sec-body" style="max-width:760px;">
+      <div class="label" style="margin-bottom:14px;">Paleta final, 8 colores</div>
+      <div class="palette-row" style="justify-content:center;">
+        <div class="palette-chip"><div class="palette-swatch" style="background:#45527F;"></div><span class="palette-hex">#45527F</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#21458B;"></div><span class="palette-hex">#21458B</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#366EAD;"></div><span class="palette-hex">#366EAD</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#5C99C7;"></div><span class="palette-hex">#5C99C7</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#90C2D5;"></div><span class="palette-hex">#90C2D5</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#6F9A9F;"></div><span class="palette-hex">#6F9A9F</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#FEE578;"></div><span class="palette-hex">#FEE578</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#FFD700;"></div><span class="palette-hex">#FFD700</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:48px;">
+    <div class="sec-label"></div>
+    <div class="sec-body">
+      <p>La pintura se eligió a propósito: la idea era un arte que funcionara más allá de la vista, con textura suficiente para poder leerse también con el tacto, de modo que alguien sin visión también pudiera experimentarlo.</p>
+      <p>Para poder entregarle esto realmente a una tejedora, el diseño completo se divide en 12 secciones, cada una del tamaño de una hoja A4 normal, impresas y usadas como guía página por página en lugar de una sola cuadrícula ilegible.</p>
+    </div>
+  </div>
+
+  <div class="imgph real" style="margin:8px 64px 0;height:448px;">
+    <img src="gw-images/gw-division-12.jpg" alt="El diseño dividido en 12 secciones, cuadriculado según el conteo de hilos del telar">
+    <span class="imgph-cap">Dividido en 12, cuadriculado según el conteo real de hilos del telar</span>
+  </div>
+
+  <div class="sec" style="padding-top:40px;">
+    <div class="sec-label"><div class="label">La Guía de Nudos</div></div>
+    <div class="sec-body">
+      <p>Este es el producto real: una tabla de patrones página por página, con los colores ya asignados, que una tejedora puede seguir hilera por hilera sin necesidad de interpretar la pintura ella misma.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="imgph real" style="height:520px;"><img src="gw-images/gw-knotguide-1.jpg" alt="Guía de nudos, hoja 1"></div>
+      <div class="label" style="text-align:center;">Hoja 1</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="imgph real" style="height:520px;"><img src="gw-images/gw-knotguide-2.jpg" alt="Guía de nudos, hoja 2"></div>
+      <div class="label" style="text-align:center;">Hoja 2</div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:56px;">
+    <div class="sec-label"><div class="label">Tejiéndolo</div></div>
+    <div class="sec-body">
+      <p>Monté y tejí la pieza yo mismo, desde urdir el telar hasta seguir mi propia guía hilera por hilera, para entender de verdad lo que le estaría pidiendo hacer a una artesana.</p>
+    </div>
+  </div>
+
+  <div class="coverflow" style="height:560px;">
+    <button class="carousel-arrow prev" onclick="gwCarouselMove(-1)" aria-label="Previous photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="coverflow-stage" id="gwCoverStage"></div>
+    <button class="carousel-arrow next" onclick="gwCarouselMove(1)" aria-label="Next photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+  <div style="text-align:center;margin:16px 64px 0;">
+    <span class="label" id="gwCarouselCap" style="color:#6B6B66;">Tejiendo la pieza, 1 de 16</span>
+  </div>
+  <div class="carousel-dots" id="gwCarouselDots"></div>
+
+  <script>
+  (function(){
+    function initCoverflow(cfg){
+      var total = cfg.images.length, idx = 0;
+      var stage = document.getElementById(cfg.stageId);
+      var cap = document.getElementById(cfg.capId);
+      var dotsEl = document.getElementById(cfg.dotsId);
+      var items = [];
+      for (var i=0;i<total;i++){
+        var el = document.createElement('div');
+        el.className = 'cover-item';
+        el.style.width = cfg.w + 'px';
+        el.style.height = cfg.h + 'px';
+        var img = document.createElement('img');
+        img.src = cfg.images[i];
+        img.alt = cfg.label + ', ' + (i+1) + ' de ' + total;
+        el.appendChild(img);
+        el.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        stage.appendChild(el);
+        items.push(el);
+      }
+      for (var i=0;i<total;i++){
+        var d = document.createElement('div');
+        d.className = 'carousel-dot' + (i===0?' active':'');
+        d.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        dotsEl.appendChild(d);
+      }
+      function setIdx(n){
+        idx = (n+total)%total;
+        for (var j=0;j<total;j++){
+          var diff = j - idx;
+          if (diff > total/2) diff -= total;
+          if (diff < -total/2) diff += total;
+          var ad = Math.abs(diff);
+          var el = items[j];
+          if (ad > 3){ el.style.opacity = '0'; el.style.pointerEvents = 'none'; el.style.zIndex = '0'; continue; }
+          var scale = ad===0 ? 1 : (ad===1 ? 0.74 : (ad===2 ? 0.56 : 0.42));
+          var op = ad===0 ? 1 : (ad===1 ? 0.55 : (ad===2 ? 0.24 : 0.1));
+          var x = diff * cfg.spacing;
+          el.style.transform = 'translate(-50%,-50%) translateX(' + x + 'px) scale(' + scale + ')';
+          el.style.opacity = String(op);
+          el.style.pointerEvents = 'auto';
+          el.style.zIndex = String(100 - ad);
+        }
+        cap.textContent = cfg.label + ', ' + (idx+1) + ' de ' + total;
+        var dots = dotsEl.children;
+        for (var k=0;k<dots.length;k++){ dots[k].className = 'carousel-dot' + (k===idx?' active':''); }
+      }
+      setIdx(0);
+      return function(delta){ setIdx(idx+delta); };
+    }
+
+    window.gwCarouselMove = initCoverflow({
+      stageId:'gwCoverStage', capId:'gwCarouselCap', dotsId:'gwCarouselDots',
+      images:['gw-images/gw-weave-1.jpg','gw-images/gw-weave-2.jpg','gw-images/gw-weave-3.jpg','gw-images/gw-weave-4.jpg','gw-images/gw-weave-5.jpg','gw-images/gw-weave-6.jpg','gw-images/gw-weave-7.jpg','gw-images/gw-weave-8.jpg','gw-images/gw-weave-9.jpg','gw-images/gw-weave-10.jpg','gw-images/gw-weave-11.jpg','gw-images/gw-weave-12.jpg','gw-images/gw-weave-13.jpg','gw-images/gw-weave-14.jpg','gw-images/gw-weave-15.jpg','gw-images/gw-weave-16.jpg'],
+      label:'Tejiendo la pieza', w:400, h:534, spacing:230
+    });
+  })();
+  </script>
+
+  <!-- ============ 06 WHERE IT STANDS ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">06 &nbsp; Estado Actual</div></div>
+    <div class="sec-body">
+      <p>El proyecto en sí está terminado. El objetivo era entender el tejido de cintura lo suficientemente bien como para traducir yo mismo una pieza de arte contemporáneo a esta técnica, y luego documentar ese proceso con la claridad suficiente para que una tejedora tradicional pudiera tomarlo y seguirlo: la guía de nudos es ese documento, y está construido, probado y completo. Entregarle la guía a una artesana y que ella teja la pieza es un paso siguiente real, pero es una extensión de un proyecto terminado, no algo que le falte.</p>
+      <p>Threadly, el concepto de negocio, es una parte separada de esto: un plan real de salida al mercado que diseñé como parte del módulo de maestría, no una empresa lanzada. Nunca operó, no hubo ventas, no se firmó ninguna alianza con Cojolya, no se obtuvo ninguna certificación de comercio justo, y lo presento exactamente como lo que es: un intento real de pensar cómo una idea basada en un oficio artesanal podría funcionar como negocio.</p>
+    </div>
+  </div>
+
+    <!-- ============ NEXT PROJECT ============ -->
+  <a href="../bezier/bezier-es.html" style="display:flex;justify-content:space-between;align-items:center;padding:72px 64px 40px;border-top:1px solid #E5E2DA;margin-top:56px;text-decoration:none;">
+    <span class="navlabel">Siguiente Proyecto</span>
+    <span style="font-size:18px;font-weight:400;color:#1A1A1A;">Bezier →</span>
+  </a>
+
+  <div style="flex:1;"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · LinkedIn: @franciscocruz90 · Praga, Chequia</span>
+  </div>
+
+</div>
+</body>
+</html>

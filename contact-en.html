@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact — Francisco Cruz</title>
+<meta name="description" content="Get in touch with Francisco Cruz about a project, a collaboration, or just to say hello.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" hreflang="en" href="contact-en.html">
+<link rel="alternate" hreflang="es" href="contact-es.html">
+<link rel="alternate" hreflang="cs" href="contact-cs.html">
+<link rel="alternate" hreflang="x-default" href="contact-en.html">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+* { box-sizing: border-box; }
+body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+a { color:#B8823C; text-decoration:none; }
+.eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+.navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+.navlabel a { color:#6B6B66; }
+.navlabel a:hover { color:#1A1A1A; }
+.label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+.langsw { display:flex; gap:8px; align-items:center; padding-left:24px; border-left:1px solid #E5E2DA; }
+.langsw .cur { color:#1A1A1A; font-weight:600; }
+.langsw .sep { color:#D8D3C6; }
+.page { max-width:640px; margin:0 auto; }
+.wrap { display:flex; flex-direction:column; min-height:100vh; }
+
+.field { margin-top:22px; }
+.field label { display:block; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:#6B6B66; margin-bottom:8px; }
+.field input, .field textarea { width:100%; font-family:'Poppins',system-ui,sans-serif; font-size:15px; font-weight:300; color:#1A1A1A; background:#fff; border:1px solid #E5E2DA; border-radius:3px; padding:13px 14px; resize:vertical; }
+.field input:focus, .field textarea:focus { outline:none; border-color:#B8823C; }
+.field textarea { min-height:140px; }
+
+.send-btn { margin-top:30px; display:inline-flex; align-items:center; gap:8px; background:#1A1A1A; color:#FAFAF8; border:none; border-radius:100px; padding:14px 26px; font-family:'Poppins',system-ui,sans-serif; font-size:13px; letter-spacing:0.05em; text-transform:uppercase; cursor:pointer; transition:background .2s ease; }
+.send-btn:hover { background:#B8823C; }
+.send-btn:disabled { opacity:0.55; cursor:default; }
+
+.status-msg { margin-top:18px; font-size:14px; font-weight:300; line-height:1.6; display:none; }
+.status-msg.ok { color:#4F6355; }
+.status-msg.err { color:#A9503C; }
+.status-msg.show { display:block; }
+#contact-form.hide-form { display:none; }
+
+.direct-block { margin-top:56px; padding-top:32px; border-top:1px solid #E5E2DA; }
+.direct-row { font-size:15px; font-weight:300; color:#3a3a37; line-height:2; }
+
+@media (max-width: 780px) {
+  header.hd, .wrap { padding-left:20px !important; padding-right:20px !important; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hd" style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="index-en.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <a href="professional-work/en.html">Professional Work</a>
+      <a href="creative-work/en.html">Creative Explorations</a>
+      <a href="about-me/about-en.html">About Me</a>
+      <span style="color:#1A1A1A;">Contact</span>
+      <div class="langsw">
+        <a class="cur" href="contact-en.html">EN</a><span class="sep">/</span><a href="contact-es.html">ES</a><span class="sep">/</span><a href="contact-cs.html">CS</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="page" style="padding:0 64px; flex:1;">
+
+    <div style="padding:56px 0 8px;">
+      <span class="eyebrow">Get in Touch</span>
+      <h1 style="font-weight:300;font-size:44px;line-height:1.15;margin:16px 0 14px;">Contact</h1>
+      <p style="font-size:15.5px;font-weight:300;color:#2c2c29;line-height:1.75;margin:0;">Have a project in mind, or just want to say hello? Send a message below and I'll get back to you as soon as I can.</p>
+    </div>
+
+    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="padding-top:12px;">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button class="send-btn" type="submit">Send Message</button>
+      <div class="status-msg ok" id="status-ok">Thanks, your message is on its way. I'll get back to you soon.</div>
+      <div class="status-msg err" id="status-err">Something went wrong. Please try emailing me directly at <a href="mailto:hello@fcruz.work">hello@fcruz.work</a>.</div>
+    </form>
+
+    <div class="direct-block">
+      <div class="label" style="margin-bottom:14px;">Or reach me directly</div>
+      <div class="direct-row">
+        <a href="mailto:hello@fcruz.work">hello@fcruz.work</a><br>
+        <a href="https://linkedin.com/in/franciscocruz90" target="_blank" rel="noopener">linkedin.com/in/franciscocruz90</a><br>
+        Prague, Czechia
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;flex-wrap:wrap;gap:8px;margin-top:64px;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · LinkedIn: @franciscocruz90 · Prague, Czechia</span>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('contact-form');
+  var okMsg = document.getElementById('status-ok');
+  var errMsg = document.getElementById('status-err');
+  var btn = form.querySelector('.send-btn');
+
+  function encode(data) {
+    return Object.keys(data).map(function (k) {
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
+    }).join('&');
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    okMsg.classList.remove('show');
+    errMsg.classList.remove('show');
+    btn.disabled = true;
+
+    var data = {
+      'form-name': form.elements['form-name'].value,
+      name: form.elements['name'].value,
+      email: form.elements['email'].value,
+      message: form.elements['message'].value,
+      'bot-field': form.elements['bot-field'].value
+    };
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(data)
+    }).then(function () {
+      form.classList.add('hide-form');
+      okMsg.classList.add('show');
+    }).catch(function () {
+      btn.disabled = false;
+      errMsg.classList.add('show');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

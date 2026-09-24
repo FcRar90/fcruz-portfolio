@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guatemala Contemporary Weaving — Francisco Cruz</title>
+<meta name="description" content="Guatemala Contemporary Weaving: translating a painting into a piece of traditional Guatemalan backstrap weaving, and Threadly, a business concept for connecting artisan weavers with contemporary designers.">
+<link rel="alternate" hreflang="en" href="guatemala-en.html">
+<link rel="alternate" hreflang="es" href="guatemala-es.html">
+<link rel="alternate" hreflang="cs" href="guatemala-cs.html">
+<link rel="alternate" hreflang="x-default" href="guatemala-en.html">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:'Poppins',system-ui,sans-serif; background:#FAFAF8; color:#1A1A1A; }
+    a { color:#B8823C; text-decoration:none; }
+    .eyebrow { font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#B8823C; }
+    .navlabel { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#6B6B66; }
+    .label { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#9C9890; }
+    .tag { display:inline-flex; align-items:center; padding:5px 12px; border-radius:100px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; background:#F3E4DE; color:#9C4A32; }
+    .stat { display:flex; flex-direction:column; gap:4px; }
+    .stat b { font-size:19px; font-weight:500; }
+    .stat span { font-size:11.5px; color:#6B6B66; font-weight:300; }
+
+    .imgph { background:#EFE9DD; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; border-radius:2px; text-align:center; padding:16px; }
+    .imgph-cap { font-size:12px; color:#8b857a; font-weight:400; letter-spacing:0.01em; max-width:340px; line-height:1.5; }
+    .imgph.real { padding:0; overflow:hidden; position:relative; background:#1A1A1A; }
+    .imgph.real img { width:100%; height:100%; object-fit:cover; display:block; }
+    .imgph.real .imgph-cap { position:absolute; left:0; right:0; bottom:0; margin:0; max-width:none; background:linear-gradient(0deg,rgba(0,0,0,0.6),transparent); color:#fff; padding:18px 14px 8px; text-align:left; font-size:11px; }
+    .imgph.contain { background:#F3E4DE; padding:32px; }
+    .imgph.contain img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+
+    .coverflow { position:relative; margin:8px 64px 0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .coverflow-stage { position:relative; width:100%; height:100%; }
+    .cover-item { position:absolute; top:50%; left:50%; border-radius:3px; overflow:hidden; background:#1A1A1A; box-shadow:0 18px 40px rgba(0,0,0,0.28); transition:transform .35s ease, opacity .35s ease; cursor:pointer; }
+    .cover-item img { width:100%; height:100%; object-fit:cover; display:block; }
+    .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; background:#FAFAF8; border:1px solid #E0DACB; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:5; }
+    .carousel-arrow.prev { left:14px; }
+    .carousel-arrow.next { right:14px; }
+    .carousel-dots { display:flex; gap:6px; justify-content:center; margin-top:14px; }
+    .carousel-dot { width:6px; height:6px; border-radius:50%; background:#D8D2C4; cursor:pointer; }
+    .carousel-dot.active { background:#9C4A32; }
+
+    .palette-row { display:flex; gap:15px; flex-wrap:wrap; }
+    .palette-chip { display:flex; flex-direction:column; gap:8px; align-items:center; }
+    .palette-swatch { width:78px; height:78px; border-radius:50%; border:1px solid rgba(0,0,0,0.08); }
+    .palette-hex { font-size:11px; color:#8b857a; font-weight:300; letter-spacing:0.02em; }
+
+    .sec { display:flex; gap:64px; padding:56px 64px 8px; }
+    .sec-label { width:220px; flex-shrink:0; }
+    .sec-body { max-width:680px; }
+    .sec-body p { font-size:15.5px; font-weight:300; line-height:1.75; margin:0 0 18px; color:#2c2c29; }
+    .sec-body p:last-child { margin-bottom:0; }
+    .flag { font-size:13px; font-weight:400; color:#9c7a3c; background:#F5EDDC; border-radius:2px; padding:10px 14px; margin:0 0 18px; line-height:1.6; }
+
+    .stat-tile { background:#F5F2EA; border-radius:2px; padding:16px 18px; display:flex; flex-direction:column; gap:5px; }
+    .stat-tile b { font-size:20px; font-weight:500; color:#1A1A1A; }
+    .stat-tile span { font-size:11px; color:#8b857a; font-weight:300; line-height:1.4; }
+
+    .approach-card { display:flex; flex-direction:column; gap:10px; }
+    .approach-card .imgph { height:120px; }
+    .approach-card h4 { font-size:14px; font-weight:500; margin:0; }
+    .approach-card .loc { font-size:11px; color:#9C9890; font-weight:300; }
+    .approach-card p { font-size:12.5px; font-weight:300; color:#5c584f; line-height:1.55; margin:0; }
+
+    .approach-text { display:flex; flex-direction:column; gap:6px; padding:18px 0; border-top:1px solid #E5E2DA; }
+    .approach-text h4 { font-size:14px; font-weight:500; margin:0; }
+    .approach-text .loc { font-size:11px; color:#9C9890; font-weight:300; }
+    .approach-text p { font-size:12.5px; font-weight:300; color:#5c584f; line-height:1.55; margin:0; }
+
+    .pillar { display:flex; flex-direction:column; gap:8px; padding:20px; background:#F5F2EA; border-radius:2px; }
+    .pillar .num { font-size:10px; color:#9C4A32; font-weight:600; letter-spacing:0.06em; }
+    .pillar h4 { font-size:15px; font-weight:500; margin:0; }
+    .pillar p { font-size:13px; font-weight:300; color:#5c584f; line-height:1.6; margin:0; }
+
+    .film-row { display:flex; gap:16px; overflow-x:auto; padding-bottom:4px; }
+    .film-item { flex:none; width:248px; display:flex; flex-direction:column; gap:8px; }
+    .film-item .imgph { height:1040px; padding:0; }
+    .film-item .imgph-cap { font-size:10.5px; max-width:170px; }
+    .film-num { font-family:'Poppins',sans-serif; font-size:10px; color:#9C4A32; font-weight:600; letter-spacing:0.05em; }
+
+    .page { max-width:1440px; margin:0 auto; display:flex; flex-direction:column; zoom:0.75; }
+    .langsw { display:flex; gap:8px; align-items:center; padding-left:24px; border-left:1px solid #E5E2DA; }
+    .langsw .cur { color:#1A1A1A; font-weight:600; }
+    .langsw .sep { color:#D8D3C6; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-bottom:1px solid #E5E2DA;flex-wrap:wrap;gap:12px;">
+    <a href="../../index-en.html" style="font-weight:600;font-size:16px;color:#1A1A1A;">Francisco Cruz</a>
+    <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;" class="navlabel">
+      <span style="color:#1A1A1A;">Professional Work</span>
+      <a href="../../creative-work/en.html">Creative Explorations</a>
+      <a href="../../about-me/about-en.html">About Me</a>
+      <a href="../../contact-en.html">Contact</a>
+      <div class="langsw">
+        <a class="cur" href="guatemala-en.html">EN</a><span class="sep">/</span><a href="guatemala-es.html">ES</a><span class="sep">/</span><a href="guatemala-cs.html">CS</a>
+      </div>
+    </div>
+  </div><div style="display:flex;justify-content:space-between;padding:18px 64px 0;">
+    <a class="eyebrow" href="../en.html">← Back to Professional Work</a><span class="eyebrow" style="color:#9C9890;">Project 4 of 6</span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="padding:52px 64px 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;">
+    <div style="max-width:760px;">
+      <span class="tag">MA Design Practice, 2024</span>
+      <h1 style="font-weight:300;font-size:46px;line-height:1.15;margin:16px 0 14px;">Guatemala Contemporary Weaving</h1>
+      <p style="font-size:16px;font-weight:300;color:#6B6B66;line-height:1.6;margin:0;">Translating a painting into a real piece of Guatemalan backstrap weaving, and a business concept built around bridging traditional craftsmen with contemporary designers.</p>
+    </div>
+    <div style="display:flex;gap:36px;padding-bottom:6px;">
+      <div class="stat"><b>Designer &amp; Researcher</b><span>Role</span></div>
+      <div class="stat"><b>2024</b><span>MA Future Design, Prague City University</span></div>
+      <div class="stat"><b>1 prototype</b><span>+ a full business concept, "Threadly"</span></div>
+    </div>
+  </div>
+
+  <div class="imgph real" style="margin:8px 64px 0;height:560px;">
+    <img src="gw-images/gw-hero.jpg" alt="The painting translating into a woven mosaic, left to right">
+  </div>
+
+  <!-- ============ 01 THE CRAFT ============ -->
+  <div class="sec" style="padding-top:76px;">
+    <div class="sec-label"><div class="label">01 &nbsp; The Craft</div></div>
+    <div class="sec-body">
+      <p>Guatemalan textiles like the huipil and the tzute are woven on a backstrap loom: a portable setup with one end tied to a fixed point and the other tied around the weaver's waist, so she controls the tension with her own body instead of a fixed frame. It's a technique passed down directly, woman to woman, and it's still how most of it gets made today.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;">
+    <div class="stat-tile"><b>60–120 days</b><span>Estimated production time per piece</span></div>
+    <div class="stat-tile"><b>70% women</b><span>Of the weaving community</span></div>
+    <div class="stat-tile"><b>120 huipiles</b><span>Documented regional styles</span></div>
+    <div class="stat-tile"><b>Up to 50 colors</b><span>Per huipil</span></div>
+    <div class="stat-tile"><b>$100–$1,000</b><span>Cost per huipil, depending on complexity</span></div>
+    <div class="stat-tile"><b>+100 NGOs</b><span>And communities involved across Guatemala</span></div>
+  </div>
+
+  <div style="margin:24px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div class="imgph real" style="height:420px;">
+      <img src="gw-images/gw-craft-textile.jpg" alt="A weaving in progress on the backstrap loom">
+      <span class="imgph-cap">A piece in progress on the loom, the weft being worked row by row</span>
+    </div>
+    <div class="imgph real" style="height:420px;">
+      <img src="gw-images/gw-craft-weaver.jpg" alt="Two women wearing traditional huipiles">
+      <span class="imgph-cap">Huipiles worn today, the pattern and color work that carries the tradition</span>
+    </div>
+  </div>
+
+  <!-- ============ 02 THE PROBLEM ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">02 &nbsp; The Problem</div></div>
+    <div class="sec-body">
+      <p>Fewer people are learning to weave. Younger generations are picking up jeans and t-shirts over huipiles, and traditional patterns are eroding under the pull of mass fashion. There's also been little room for the craft to innovate on its own terms, which keeps shrinking its market instead of growing it. Most weavers only reach the local market and tourists, with no real path into an international one.</p>
+    </div>
+  </div>
+
+  <!-- ============ 03 EXISTING APPROACHES ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">03 &nbsp; Existing Approaches</div></div>
+    <div class="sec-body">
+      <p>A handful of brands are already doing something similar elsewhere, worth knowing before building anything new. Jan Kath is the closest model: a German studio that has hand-knotted rugs made in Nepal and Pakistan, by people who've made traditional rugs for generations, but designs contemporary patterns for them to make, things like their cloud and sky designs, instead of only traditional motifs. Same idea I'm after: the quality and skill of a traditional technique, paired with a design language that's actually current.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;">
+    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;">
+      <div class="imgph real" style="height:475px;"><img src="gw-images/gw-jankath-1.jpg" alt="Jan Kath rug, cloud and sky design"></div>
+      <div class="imgph real" style="height:475px;"><img src="gw-images/gw-jankath-2.jpg" alt="Jan Kath rug, cloud pattern detail"></div>
+      <div class="imgph real" style="height:475px;"><img src="gw-images/gw-jankath-3.jpg" alt="Jan Kath rug, floral pattern"></div>
+    </div>
+    <div style="margin-top:12px;"><h4 style="font-size:14px;font-weight:500;margin:0 0 2px;">Jan Kath</h4><div class="loc">Bochum, Germany</div></div>
+  </div>
+
+  <div style="margin:20px 64px 0;display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;">
+    <div class="approach-text">
+      <h4>Sabahar</h4>
+      <div class="loc">Addis Ababa, Ethiopia</div>
+      <p>High-quality handwoven textiles, focused on natural fibers and sustainable practice.</p>
+    </div>
+    <div class="approach-text">
+      <h4>Mdingi</h4>
+      <div class="loc">Cape Town, South Africa</div>
+      <p>Ethical, sustainable fashion brand built on handcrafted garments.</p>
+    </div>
+    <div class="approach-text">
+      <h4>Gone Rural</h4>
+      <div class="loc">Swaziland</div>
+      <p>Rural women weaving home accessories from natural materials.</p>
+    </div>
+  </div>
+
+  <!-- ============ 04 THE CONCEPT: THREADLY ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">04 &nbsp; The Concept: Threadly</div></div>
+    <div class="sec-body">
+      <p>The idea I built around this is Threadly, "timeless threads": a brand that connects traditional Guatemalan weavers directly with contemporary designers instead of leaving each side working alone. Designers get access to a real technique and a texture they can't fake digitally; weavers get steadier work and fair pay instead of depending only on tourism.</p>
+      <p>The plan leans on Cojolya, a real fair-trade cooperative of Mayan women weavers based in Santiago Atitlán, as the source of skilled artisans, though no partnership was ever actually put in place, this stayed at the concept stage.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;">
+    <div class="pillar">
+      <div class="num">PILLAR 01</div>
+      <h4>Cultural Preservation</h4>
+      <p>Keeping traditional weaving techniques alive, with artisans paid fairly for it.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">PILLAR 02</div>
+      <h4>Innovation</h4>
+      <p>Modern design and digital tools applied to a traditional technique, not replacing it.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">PILLAR 03</div>
+      <h4>Ethical &amp; Sustainable Practices</h4>
+      <p>Fair trade principles and eco-friendly materials built in from the start.</p>
+    </div>
+  </div>
+
+  <div style="margin:20px 64px 0;">
+    <div class="imgph contain" style="height:400px;background:#D4E2D5;">
+      <img src="gw-images/gw-threadly-logo.png" alt="Threadly wordmark and logo">
+    </div>
+  </div>
+
+  <!-- ============ 05 THE PROCESS: PAINTING TO TEXTILE ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">05 &nbsp; The Process: Painting to Textile</div></div>
+    <div class="sec-body">
+      <p>The clearest proof of concept I built was translating an actual painting into a woven piece, working through the real constraints of backstrap weaving instead of just describing them on paper. The source was "Contratulations, you are alive." by Raynar Rogers, a vibrant blue-and-yellow abstract piece that reads, to me, like the chaos of everyday life.</p>
+    </div>
+  </div>
+
+  <div style="margin:16px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;">
+    <div class="imgph real" style="height:777px;">
+      <img src="gw-images/gw-painting.jpg" alt="The original painting, Contratulations, you are alive, by Raynar Rogers" style="object-fit:contain;">
+      <span class="imgph-cap">The original painting</span>
+    </div>
+    <div class="imgph real" style="height:777px;">
+      <img src="gw-images/gw-selection-vector.jpg" alt="The painting with the chosen strip marked in red" style="object-fit:contain;">
+      <span class="imgph-cap">The single strip selected to weave</span>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:32px;">
+    <div class="sec-label"></div>
+    <div class="sec-body">
+      <p>Only a narrow strip of the painting could actually be woven, not the whole piece: the cut is that width because of real physical limits, the width of the textile itself and the number of threads the loom could actually hold.</p>
+    </div>
+  </div>
+
+  <div style="margin:32px 0 0 64px;">
+    <div class="film-row" style="padding-right:64px;">
+      <div class="film-item">
+        <div class="film-num">01 PHOTOGRAPHY</div>
+        <div class="imgph real"><img src="gw-images/gw-process-1-photography.jpg" alt="The chosen section photographed"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">02 VECTORIZATION</div>
+        <div class="imgph real"><img src="gw-images/gw-process-2-vectorization.jpg" alt="The section vectorized to guide the craftsmen"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">03 MOSAIC CREATION</div>
+        <div class="imgph real"><img src="gw-images/gw-process-3-mosaic.jpg" alt="Broken into a color mosaic, aligned to the thread count"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">04 COLOR LAYERING</div>
+        <div class="imgph real"><img src="gw-images/gw-process-4-colorlayering.jpg" alt="High-contrast pass isolating 8 color groups"></div>
+      </div>
+      <div class="film-item">
+        <div class="film-num">05 RECOLORING</div>
+        <div class="imgph real"><img src="gw-images/gw-process-5-recoloring.jpg" alt="Recolored back to the artwork's real 8-color palette"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:28px;padding-bottom:0;">
+    <div class="sec-label"></div>
+    <div class="sec-body" style="max-width:760px;">
+      <div class="label" style="margin-bottom:14px;">Final palette, 8 colors</div>
+      <div class="palette-row" style="justify-content:center;">
+        <div class="palette-chip"><div class="palette-swatch" style="background:#45527F;"></div><span class="palette-hex">#45527F</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#21458B;"></div><span class="palette-hex">#21458B</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#366EAD;"></div><span class="palette-hex">#366EAD</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#5C99C7;"></div><span class="palette-hex">#5C99C7</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#90C2D5;"></div><span class="palette-hex">#90C2D5</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#6F9A9F;"></div><span class="palette-hex">#6F9A9F</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#FEE578;"></div><span class="palette-hex">#FEE578</span></div>
+        <div class="palette-chip"><div class="palette-swatch" style="background:#FFD700;"></div><span class="palette-hex">#FFD700</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:48px;">
+    <div class="sec-label"></div>
+    <div class="sec-body">
+      <p>The painting was picked on purpose: the idea was art that works beyond sight, textured enough to be read by touch as well as seen, so someone without vision could still experience it.</p>
+      <p>To actually hand this to a weaver, the full design gets split into 12 sections, each sized to fit on a normal A4 sheet, printed and used as a page-by-page guide instead of one unreadable grid.</p>
+    </div>
+  </div>
+
+  <div class="imgph real" style="margin:8px 64px 0;height:448px;">
+    <img src="gw-images/gw-division-12.jpg" alt="The design divided into 12 sections, gridded for the loom's thread count">
+    <span class="imgph-cap">Divided into 12, gridded to the loom's actual thread count</span>
+  </div>
+
+  <div class="sec" style="padding-top:40px;">
+    <div class="sec-label"><div class="label">The Knot Guide</div></div>
+    <div class="sec-body">
+      <p>This is the actual product: a page-by-page pattern chart, colors already assigned, that a weaver can follow row by row without needing to interpret the painting herself.</p>
+    </div>
+  </div>
+
+  <div style="margin:8px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="imgph real" style="height:520px;"><img src="gw-images/gw-knotguide-1.jpg" alt="Knot guide, sheet 1"></div>
+      <div class="label" style="text-align:center;">Sheet 1</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="imgph real" style="height:520px;"><img src="gw-images/gw-knotguide-2.jpg" alt="Knot guide, sheet 2"></div>
+      <div class="label" style="text-align:center;">Sheet 2</div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-top:56px;">
+    <div class="sec-label"><div class="label">Weaving It</div></div>
+    <div class="sec-body">
+      <p>I set up and wove the piece myself, from warping the loom to following my own guide row by row, to actually understand what I'd be asking an artisan to do.</p>
+    </div>
+  </div>
+
+  <div class="coverflow" style="height:560px;">
+    <button class="carousel-arrow prev" onclick="gwCarouselMove(-1)" aria-label="Previous photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="coverflow-stage" id="gwCoverStage"></div>
+    <button class="carousel-arrow next" onclick="gwCarouselMove(1)" aria-label="Next photo">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B66" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+  <div style="text-align:center;margin:16px 64px 0;">
+    <span class="label" id="gwCarouselCap" style="color:#6B6B66;">Weaving the piece, 1 of 16</span>
+  </div>
+  <div class="carousel-dots" id="gwCarouselDots"></div>
+
+  <script>
+  (function(){
+    function initCoverflow(cfg){
+      var total = cfg.images.length, idx = 0;
+      var stage = document.getElementById(cfg.stageId);
+      var cap = document.getElementById(cfg.capId);
+      var dotsEl = document.getElementById(cfg.dotsId);
+      var items = [];
+      for (var i=0;i<total;i++){
+        var el = document.createElement('div');
+        el.className = 'cover-item';
+        el.style.width = cfg.w + 'px';
+        el.style.height = cfg.h + 'px';
+        var img = document.createElement('img');
+        img.src = cfg.images[i];
+        img.alt = cfg.label + ', ' + (i+1) + ' of ' + total;
+        el.appendChild(img);
+        el.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        stage.appendChild(el);
+        items.push(el);
+      }
+      for (var i=0;i<total;i++){
+        var d = document.createElement('div');
+        d.className = 'carousel-dot' + (i===0?' active':'');
+        d.addEventListener('click', (function(n){ return function(){ setIdx(n); }; })(i));
+        dotsEl.appendChild(d);
+      }
+      function setIdx(n){
+        idx = (n+total)%total;
+        for (var j=0;j<total;j++){
+          var diff = j - idx;
+          if (diff > total/2) diff -= total;
+          if (diff < -total/2) diff += total;
+          var ad = Math.abs(diff);
+          var el = items[j];
+          if (ad > 3){ el.style.opacity = '0'; el.style.pointerEvents = 'none'; el.style.zIndex = '0'; continue; }
+          var scale = ad===0 ? 1 : (ad===1 ? 0.74 : (ad===2 ? 0.56 : 0.42));
+          var op = ad===0 ? 1 : (ad===1 ? 0.55 : (ad===2 ? 0.24 : 0.1));
+          var x = diff * cfg.spacing;
+          el.style.transform = 'translate(-50%,-50%) translateX(' + x + 'px) scale(' + scale + ')';
+          el.style.opacity = String(op);
+          el.style.pointerEvents = 'auto';
+          el.style.zIndex = String(100 - ad);
+        }
+        cap.textContent = cfg.label + ', ' + (idx+1) + ' of ' + total;
+        var dots = dotsEl.children;
+        for (var k=0;k<dots.length;k++){ dots[k].className = 'carousel-dot' + (k===idx?' active':''); }
+      }
+      setIdx(0);
+      return function(delta){ setIdx(idx+delta); };
+    }
+
+    window.gwCarouselMove = initCoverflow({
+      stageId:'gwCoverStage', capId:'gwCarouselCap', dotsId:'gwCarouselDots',
+      images:['gw-images/gw-weave-1.jpg','gw-images/gw-weave-2.jpg','gw-images/gw-weave-3.jpg','gw-images/gw-weave-4.jpg','gw-images/gw-weave-5.jpg','gw-images/gw-weave-6.jpg','gw-images/gw-weave-7.jpg','gw-images/gw-weave-8.jpg','gw-images/gw-weave-9.jpg','gw-images/gw-weave-10.jpg','gw-images/gw-weave-11.jpg','gw-images/gw-weave-12.jpg','gw-images/gw-weave-13.jpg','gw-images/gw-weave-14.jpg','gw-images/gw-weave-15.jpg','gw-images/gw-weave-16.jpg'],
+      label:'Weaving the piece', w:400, h:534, spacing:230
+    });
+  })();
+  </script>
+
+  <!-- ============ 06 WHERE IT STANDS ============ -->
+  <div class="sec" style="padding-top:64px;">
+    <div class="sec-label"><div class="label">06 &nbsp; Where It Stands</div></div>
+    <div class="sec-body">
+      <p>The project itself is finished. The goal was to understand backstrap weaving well enough to translate a piece of contemporary art into it myself, then document that process clearly enough that a traditional weaver could pick it up and follow it: the knot guide is that document, and it's built, tested, and complete. Handing the guide to an artisan and having her weave it is a real next step, but it's an extension of a finished project, not something missing from it.</p>
+      <p>Threadly, the business concept, is a separate piece of this: a real go-to-market plan I designed as part of the MA module, not a launched company. It never operated, no sales, no signed partnership with Cojolya, no fair-trade certification obtained, and I'm showing it as exactly what it is, a real attempt at thinking through how a craft-based idea could work as a business.</p>
+    </div>
+  </div>
+
+    <!-- ============ NEXT PROJECT ============ -->
+  <a href="../bezier/bezier-en.html" style="display:flex;justify-content:space-between;align-items:center;padding:72px 64px 40px;border-top:1px solid #E5E2DA;margin-top:56px;text-decoration:none;">
+    <span class="navlabel">Next Project</span>
+    <span style="font-size:18px;font-weight:400;color:#1A1A1A;">Bezier →</span>
+  </a>
+
+  <div style="flex:1;"></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:28px 64px;border-top:1px solid #E5E2DA;">
+    <span class="label">© 2026 Francisco Cruz</span>
+    <span class="label">hello@fcruz.work · LinkedIn: @franciscocruz90 · Prague, Czechia</span>
+  </div>
+
+</div>
+</body>
+</html>
