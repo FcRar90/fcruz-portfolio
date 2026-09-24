@@ -44,6 +44,14 @@ a { color:#B8823C; text-decoration:none; }
 @media (max-width: 780px) {
   .intro-block { padding-left:24px; padding-right:24px; }
 }
+
+.cookie-bar { position:fixed; left:0; right:0; bottom:0; z-index:9999; background:#1A1A1A; color:#FAFAF8; padding:16px 24px; display:none; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; font-family:'Poppins',system-ui,sans-serif; font-size:12.5px; font-weight:300; line-height:1.5; box-shadow:0 -4px 20px rgba(0,0,0,0.15); }
+.cookie-bar.cookie-bar-visible { display:flex; }
+.cookie-bar p { margin:0; max-width:640px; }
+.cookie-bar .cookie-actions { display:flex; gap:10px; flex-shrink:0; }
+.cookie-bar button { font-family:'Poppins',system-ui,sans-serif; font-size:11.5px; letter-spacing:0.04em; text-transform:uppercase; border-radius:100px; padding:9px 20px; cursor:pointer; border:none; }
+.cookie-bar .cb-accept { background:#B8823C; color:#1A1A1A; font-weight:500; }
+.cookie-bar .cb-decline { background:transparent; color:#FAFAF8; border:1px solid rgba(255,255,255,0.3); }
 </style>
 
 </head>
@@ -123,5 +131,43 @@ a { color:#B8823C; text-decoration:none; }
     <span class="label">hello@fcruz.work · LinkedIn: @franciscocruz90 · Praga, Chequia</span>
   </div>
 
+
+<div class="cookie-bar" id="cookie-bar">
+  <p>Este sitio usa cookies (Microsoft Clarity) para entender como lo usan los visitantes.</p>
+  <div class="cookie-actions">
+    <button class="cb-decline" id="cookie-decline" type="button">Rechazar</button>
+    <button class="cb-accept" id="cookie-accept" type="button">Aceptar</button>
+  </div>
+</div>
+<script>
+(function(){
+  function loadClarity(){
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yna7uu6ijt");
+  }
+  var bar = document.getElementById('cookie-bar');
+  var consent = null;
+  try { consent = localStorage.getItem('cookie-consent'); } catch(e){}
+  if (consent === 'accepted') {
+    loadClarity();
+  } else if (consent !== 'declined') {
+    if (bar) bar.className += ' cookie-bar-visible';
+  }
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function(){
+    try { localStorage.setItem('cookie-consent', 'accepted'); } catch(e){}
+    loadClarity();
+    if (bar) bar.className = bar.className.replace(' cookie-bar-visible', '');
+  });
+  if (declineBtn) declineBtn.addEventListener('click', function(){
+    try { localStorage.setItem('cookie-consent', 'declined'); } catch(e){}
+    if (bar) bar.className = bar.className.replace(' cookie-bar-visible', '');
+  });
+})();
+</script>
 </body>
 </html>
